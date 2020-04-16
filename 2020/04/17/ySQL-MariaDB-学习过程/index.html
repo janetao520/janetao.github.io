@@ -7,7 +7,7 @@
 
     
 
-    <title>第一页 | janetao-Blog</title>
+    <title>MySQL/MariaDB 学习过程 | janetao-Blog</title>
     <meta name="author" content="janetao" />
     <meta name="keywords" content="" />
     <meta name="description" content="" />
@@ -97,6 +97,8 @@
 
         
         
+        
+        
 
         
         <div class="author-meta">
@@ -158,15 +160,15 @@
     <header class="article-header">
         
         <h1 itemprop="name">
-            第一页
+            MySQL/MariaDB 学习过程
         </h1>
         
         <div class="article-meta clearfix">
-            <a class="article-date" href="http://yoursite.com/%E7%AC%AC%E4%B8%80%E9%A1%B5/index-3.html">
+            <a class="article-date" href="http://yoursite.com/2020/04/17/ySQL-MariaDB-%E5%AD%A6%E4%B9%A0%E8%BF%87%E7%A8%8B/index.html">
     
     <i class="icon-calendar"></i>
     
-    <time datetime="2020-04-15T08:51:31.000Z" itemprop="datePublished">2020-04-15</time>
+    <time datetime="2020-04-16T16:53:18.000Z" itemprop="datePublished">2020-04-17</time>
 </a>
 
             
@@ -183,6 +185,11 @@
 
 
 
+<a id="pagenext" href="/janetao.github.io/2020/04/17/%E5%AE%A2%EF%BC%9AJavaScript-%E7%AC%94%E8%AE%B0/" class="article-next" title="三剑客：JavaScript 笔记"><i class="icon-arrow-right"></i></a>
+
+
+
+
 <div class="comments">
     <div id="comments"></div>
     <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
@@ -193,10 +200,10 @@
         repo: "janetao520.github.io",
         owner: "janetao520",
         admin: ["JaneTao"],
-        id: "第一页/index-3.html",
+        id: "2020/04/17/ySQL-MariaDB-学习过程",
         distractionFreeMode: true,
-        title: "第一页",
-        body: "http://yoursite.com/%E7%AC%AC%E4%B8%80%E9%A1%B5/index-3.html",
+        title: "MySQL/MariaDB 学习过程",
+        body: "http://yoursite.com/2020/04/17/ySQL-MariaDB-%E5%AD%A6%E4%B9%A0%E8%BF%87%E7%A8%8B/",
         labels: []
     }).render('comments');
     </script>
@@ -264,6 +271,33 @@
         }
     });
     </script>
+    
+        
+<script src="/janetao.github.io/js/scrollspy.min.js"></script>
+
+        <script type="text/javascript">
+        $(document.body).scrollspy({target: '#aside-inner'});
+
+        $(window).on('resize', function() {
+            var hw = $('#header').width();
+            var ww = $('#wrapper').width();
+            var space = ($(this).width() - hw - ww) / 2 / 2;
+
+            var pageprev = $('#pageprev');
+            var pagenext = $('#pagenext');
+            var avg = (pageprev.width() + pagenext.width()) / 2
+
+            if(space > avg) {
+                var len = space - avg / 2;
+                var styles = {position: 'fixed', top: '50%', marginTop: - (pageprev.width() + pagenext.width()) / 4}
+                pageprev.css($.extend({left: hw + len}, styles));
+                pagenext.css($.extend({right: len}, styles));
+            } else {
+                pageprev.removeAttr('style');
+                pagenext.removeAttr('style');
+            }
+        }).trigger('resize');
+        </script>
     
 
 </body>
