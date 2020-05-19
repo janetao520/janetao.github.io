@@ -1,0 +1,1275 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8" />
+
+    
+
+    
+
+    <title>2017年某内-JAVA学习笔记 | janetao-Blog</title>
+    <meta name="author" content="janetao" />
+    <meta name="keywords" content="" />
+    <meta name="description" content="1:基础 (basic) 讲师：王克晶day01计算机分类：1。PC机，个人电脑2。处理大数据请求的高性能计算机3。只能终端的；手机，掌上电脑，可视电话4。嵌入式设备：除了上面3种以外带CPU的Windows操作系统---------PC机Linux操作系统------------服务器，智能终端，嵌入式设备（1.）不带图形界面的--真正的服务器系统 （2）带图形界面的JAVA主要是用于服务器端的开发Linux：需要快速的操作速度------基于命令的1）开源的操作系统，..." />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no" />
+
+    
+    <link rel="alternate" href="/janetao.github.io/atom.xml" title="janetao-Blog" type="application/atom+xml">
+    
+    
+    <link rel="icon" href="/janetao.github.io/images/favicon.ico">
+    
+
+    <style type="text/css">
+    @font-face {
+        font-family: 'icomoon';
+        src: url("/janetao.github.io/fonts/icomoon.eot?q628ml");
+        src: url("/janetao.github.io/fonts/icomoon.eot?q628ml#iefix") format('embedded-opentype'),
+             url("/janetao.github.io/fonts/icomoon.ttf?q628ml") format('truetype'),
+             url("/janetao.github.io/fonts/icomoon.woff?q628ml") format('woff'),
+             url("/janetao.github.io/fonts/icomoon.svg?q628ml#icomoon") format('svg');
+        font-weight: normal;
+        font-style: normal;
+    }
+    </style>
+    
+<link rel="stylesheet" href="/janetao.github.io/css/style.css">
+
+
+    <!--[if lt IE 9]>
+    <style type="text/css">
+    .nav-inner {top:0;}
+    .author-meta {position:static;top:0;}
+    .search-form {height:36px;}
+    </style>
+    <script type="text/javascript" src="https://unpkg.com/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+    <![endif]-->
+<meta name="generator" content="Hexo 4.2.0"></head>
+<body>
+
+    <main class="app">
+        <header id="header" class="header clearfix">
+    <div id="nav" class="nav">
+    <div class="nav-mobile">
+        <button id="open-panel" class="open-panel nav-mobile-item"><i class="icon-documents"></i></button>
+        <h1 class="nav-mobile-title nav-mobile-item">janetao-Blog</h1>
+        <button id="open-menus" class="open-panel nav-mobile-item"><i class="icon-library"></i></button>
+    </div>
+
+    <nav id="nav-inner" class="nav-inner">
+        
+            <a class="nav-item" href="/janetao.github.io/">
+                <span class="nav-text">首页</span>
+            </a>
+        
+            <a class="nav-item" href="/janetao.github.io/categories/front-end">
+                <span class="nav-text">前端</span>
+            </a>
+        
+            <a class="nav-item" href="/janetao.github.io/categories/back-end">
+                <span class="nav-text">后端</span>
+            </a>
+        
+            <a class="nav-item" href="/janetao.github.io/categories/yun-end">
+                <span class="nav-text">运维</span>
+            </a>
+        
+            <a class="nav-item" href="/janetao.github.io/tags">
+                <span class="nav-text">标签</span>
+            </a>
+        
+            <a class="nav-item" href="/janetao.github.io/archives">
+                <span class="nav-text">归档</span>
+            </a>
+        
+            <a class="nav-item" href="/janetao.github.io/atom.xml">
+                <span class="nav-text">订阅</span>
+            </a>
+        
+            <a class="nav-item" href="/janetao.github.io/about">
+                <span class="nav-text">关于</span>
+            </a>
+        
+    </nav>
+</div>
+
+    <aside id="aside" class="aside">
+    <div id="aside-mask" class="aside-mask"></div>
+    <div id="aside-inner" class="aside-inner">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit"><i class="icon-search-stroke"></i></button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+
+        
+        
+        
+        
+
+        
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#1-基础-basic-讲师：王克晶"><span class="toc-number">1.</span> <span class="toc-text">1:基础 (basic) 讲师：王克晶</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#day01"><span class="toc-number">1.1.</span> <span class="toc-text">day01</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#计算机分类："><span class="toc-number">1.1.1.</span> <span class="toc-text">计算机分类：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#JAVA主要是用于服务器端的开发"><span class="toc-number">1.1.2.</span> <span class="toc-text">JAVA主要是用于服务器端的开发</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#C语言编译运行过程："><span class="toc-number">1.1.3.</span> <span class="toc-text">C语言编译运行过程：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#JAVA语言编译运行过程："><span class="toc-number">1.1.4.</span> <span class="toc-text">JAVA语言编译运行过程：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#开发工具-eclipse："><span class="toc-number">1.1.5.</span> <span class="toc-text">开发工具 eclipse：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#JAVA开发步骤："><span class="toc-number">1.1.6.</span> <span class="toc-text">JAVA开发步骤：</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#day02"><span class="toc-number">1.2.</span> <span class="toc-text">day02</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#一：变量：存数的，代词，指代的就是它所存的那个数"><span class="toc-number">1.2.1.</span> <span class="toc-text">一：变量：存数的，代词，指代的就是它所存的那个数</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1）声明："><span class="toc-number">1.2.1.1.</span> <span class="toc-text">1）声明：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2）命名："><span class="toc-number">1.2.1.2.</span> <span class="toc-text">2）命名：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3）初始化-第一次赋值"><span class="toc-number">1.2.1.3.</span> <span class="toc-text">3）初始化:第一次赋值</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4）使用："><span class="toc-number">1.2.1.4.</span> <span class="toc-text">4）使用：</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#二：基本数据类型-常用"><span class="toc-number">1.2.2.</span> <span class="toc-text">二：基本数据类型(常用)</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-int：整形，只能装整数，4个字节，-21个多亿到21个多亿"><span class="toc-number">1.2.2.1.</span> <span class="toc-text">1.int：整形，只能装整数，4个字节，-21个多亿到21个多亿</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-long：长整型，只能装整数，8个字节，很大很大很大；数字后面要加L"><span class="toc-number">1.2.2.2.</span> <span class="toc-text">2.long：长整型，只能装整数，8个字节，很大很大很大；数字后面要加L</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-double：浮点型，8个字节，只能装小数"><span class="toc-number">1.2.2.3.</span> <span class="toc-text">3.double：浮点型，8个字节，只能装小数</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-boolean：布尔型，1个字节，只能装ture和false"><span class="toc-number">1.2.2.4.</span> <span class="toc-text">4.boolean：布尔型，1个字节，只能装ture和false</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-char：字符型，2个字节"><span class="toc-number">1.2.2.5.</span> <span class="toc-text">5.char：字符型，2个字节</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#6-byte"><span class="toc-number">1.2.2.6.</span> <span class="toc-text">6.byte</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#7-short"><span class="toc-number">1.2.2.7.</span> <span class="toc-text">7.short</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#8-float"><span class="toc-number">1.2.2.8.</span> <span class="toc-text">8.float</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#三：基本数据类型间的转换"><span class="toc-number">1.2.3.</span> <span class="toc-text">三：基本数据类型间的转换</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1）两种方式"><span class="toc-number">1.2.3.1.</span> <span class="toc-text">1）两种方式</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2）两种规格"><span class="toc-number">1.2.3.2.</span> <span class="toc-text">2）两种规格</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#四：Scanner用法"><span class="toc-number">1.2.4.</span> <span class="toc-text">四：Scanner用法</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#day03"><span class="toc-number">1.3.</span> <span class="toc-text">day03</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-运算符"><span class="toc-number">1.3.1.</span> <span class="toc-text">1.运算符</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-分支结构"><span class="toc-number">1.3.2.</span> <span class="toc-text">2.分支结构</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#练习："><span class="toc-number">1.3.3.</span> <span class="toc-text">练习：</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#day04"><span class="toc-number">1.4.</span> <span class="toc-text">day04</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#一：变量及作用域"><span class="toc-number">1.4.1.</span> <span class="toc-text">一：变量及作用域</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-变量的作用域-作用范围："><span class="toc-number">1.4.1.1.</span> <span class="toc-text">1.变量的作用域&#x2F;作用范围：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-变量的同名问题："><span class="toc-number">1.4.1.2.</span> <span class="toc-text">2.变量的同名问题：</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#二：循环"><span class="toc-number">1.4.2.</span> <span class="toc-text">二：循环</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-循环：反复去执行一段可能相同或相似的代码"><span class="toc-number">1.4.2.1.</span> <span class="toc-text">1.循环：反复去执行一段可能相同或相似的代码</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-循环三要素："><span class="toc-number">1.4.2.2.</span> <span class="toc-text">2.循环三要素：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Do-while和while的区别"><span class="toc-number">1.4.2.3.</span> <span class="toc-text">*** Do while和while的区别:</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#循环变量："><span class="toc-number">1.4.2.4.</span> <span class="toc-text">循环变量：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-循环结构"><span class="toc-number">1.4.2.5.</span> <span class="toc-text">3.循环结构</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#练习：-1"><span class="toc-number">1.4.2.6.</span> <span class="toc-text">练习：</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#三：笔记"><span class="toc-number">1.4.3.</span> <span class="toc-text">三：笔记</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#任何复杂的结构程序，都可以通过三种结构来实现"><span class="toc-number">1.4.3.1.</span> <span class="toc-text">任何复杂的结构程序，都可以通过三种结构来实现</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#随机数：Math-random-——0-0到0-999999999999999999…"><span class="toc-number">1.4.3.2.</span> <span class="toc-text">随机数：Math.random()——0.0到0.999999999999999999….</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#day05"><span class="toc-number">1.5.</span> <span class="toc-text">day05</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#一：循环"><span class="toc-number">1.5.1.</span> <span class="toc-text">一：循环</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-三种循环的更佳使用情况："><span class="toc-number">1.5.1.1.</span> <span class="toc-text">1.三种循环的更佳使用情况：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-嵌套循环："><span class="toc-number">1.5.1.2.</span> <span class="toc-text">2.嵌套循环：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-程序-算法-数据结构"><span class="toc-number">1.5.1.3.</span> <span class="toc-text">3.程序&#x3D;算法+数据结构</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#二：数据结构-数组"><span class="toc-number">1.5.2.</span> <span class="toc-text">二：数据结构-数组</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1）数组"><span class="toc-number">1.5.2.1.</span> <span class="toc-text">1）数组</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#1）数据概述"><span class="toc-number">1.5.2.1.1.</span> <span class="toc-text">1）数据概述</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#2）数组类型"><span class="toc-number">1.5.2.1.2.</span> <span class="toc-text">2）数组类型</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#3）数组的定义"><span class="toc-number">1.5.2.1.3.</span> <span class="toc-text">3）数组的定义</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#4：数组的初始化："><span class="toc-number">1.5.2.1.4.</span> <span class="toc-text">4：数组的初始化：</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#5：数组的访问："><span class="toc-number">1.5.2.1.5.</span> <span class="toc-text">5：数组的访问：</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#6）数组的遍历："><span class="toc-number">1.5.2.1.6.</span> <span class="toc-text">6）数组的遍历：</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#7）数组的复制："><span class="toc-number">1.5.2.1.7.</span> <span class="toc-text">7）数组的复制：</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#8）数组的排序："><span class="toc-number">1.5.2.1.8.</span> <span class="toc-text">8）数组的排序：</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#冒泡排序方法代码："><span class="toc-number">1.5.2.1.9.</span> <span class="toc-text">冒泡排序方法代码：</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#Java提供的升序排序方式-Arrays-sort-arr"><span class="toc-number">1.5.2.1.10.</span> <span class="toc-text">*Java提供的升序排序方式  Arrays.sort(arr);</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#练习：-2"><span class="toc-number">1.5.2.1.11.</span> <span class="toc-text">练习：</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#三：排序-冒泡排序"><span class="toc-number">1.5.3.</span> <span class="toc-text">三：排序- 冒泡排序</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-冒泡排序"><span class="toc-number">1.5.3.1.</span> <span class="toc-text">1: 冒泡排序</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#步骤如下："><span class="toc-number">1.5.3.1.1.</span> <span class="toc-text">步骤如下：</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#例子：求数组元素的最大值"><span class="toc-number">1.5.3.1.2.</span> <span class="toc-text">例子：求数组元素的最大值</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#例子：九九乘法表"><span class="toc-number">1.5.3.1.2.1.</span> <span class="toc-text">例子：九九乘法表</span></a></li></ol></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#day06"><span class="toc-number">1.6.</span> <span class="toc-text">day06</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#质数："><span class="toc-number">1.6.1.</span> <span class="toc-text">质数：</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#for-inr-i-2-i-lt-Math-sqrt-num-i-java中求平方跟"><span class="toc-number">1.6.1.1.</span> <span class="toc-text">for(inr i&#x3D;2;i&lt;&#x3D;Math.sqrt(num);i++)&#x2F;&#x2F;java中求平方跟</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#方法"><span class="toc-number">1.6.2.</span> <span class="toc-text">方法</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-方法：函数、过程"><span class="toc-number">1.6.2.1.</span> <span class="toc-text">1.方法：函数、过程</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-方法的定义："><span class="toc-number">1.6.2.2.</span> <span class="toc-text">2.方法的定义：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-方法的调用："><span class="toc-number">1.6.2.3.</span> <span class="toc-text">3.方法的调用：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-return："><span class="toc-number">1.6.2.4.</span> <span class="toc-text">4.return：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-猜字符游戏："><span class="toc-number">1.6.2.5.</span> <span class="toc-text">5.猜字符游戏：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#找最大值的算法："><span class="toc-number">1.6.2.6.</span> <span class="toc-text">找最大值的算法：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#训练：猜字符游戏项目思路："><span class="toc-number">1.6.2.7.</span> <span class="toc-text">训练：猜字符游戏项目思路：</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#1，设计数据结构-—–-gt-数怎么存"><span class="toc-number">1.6.2.7.1.</span> <span class="toc-text">1，设计数据结构:—–&gt;数怎么存</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#2-设计程序结构：方法"><span class="toc-number">1.6.2.7.2.</span> <span class="toc-text">2.设计程序结构：方法</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#3-设计算法"><span class="toc-number">1.6.2.7.3.</span> <span class="toc-text">3.设计算法</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#基本数据类型判断相等用—"><span class="toc-number">1.6.2.7.4.</span> <span class="toc-text">基本数据类型判断相等用—  &#x3D;&#x3D;</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#练习：-3"><span class="toc-number">1.6.2.8.</span> <span class="toc-text">练习：</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#1：完成猜字符小游戏"><span class="toc-number">1.6.2.8.1.</span> <span class="toc-text">1：完成猜字符小游戏</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#猜字符游戏思路步骤"><span class="toc-number">1.6.2.8.2.</span> <span class="toc-text">猜字符游戏思路步骤</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#1，两分方法"><span class="toc-number">1.6.2.8.2.1.</span> <span class="toc-text">1，两分方法</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#2，生成随机字符数组"><span class="toc-number">1.6.2.8.2.2.</span> <span class="toc-text">2，生成随机字符数组</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#主方法设计如下"><span class="toc-number">1.6.2.8.2.3.</span> <span class="toc-text">主方法设计如下</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#代码演示如下"><span class="toc-number">1.6.2.8.2.4.</span> <span class="toc-text">代码演示如下</span></a></li></ol></li></ol></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2-面向对象-OOP"><span class="toc-number">2.</span> <span class="toc-text">2:面向对象(OOP)</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#oop-day01"><span class="toc-number">2.1.</span> <span class="toc-text">oop.day01</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-什么是类？什么是对象？"><span class="toc-number">2.1.1.</span> <span class="toc-text">1.什么是类？什么是对象？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-如何创建类？如何创建对象？如何访问成员？"><span class="toc-number">2.1.2.</span> <span class="toc-text">2.如何创建类？如何创建对象？如何访问成员？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-引用类型之间画等号："><span class="toc-number">2.1.3.</span> <span class="toc-text">3.引用类型之间画等号：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-基本类型之间画等号："><span class="toc-number">2.1.4.</span> <span class="toc-text">4.基本类型之间画等号：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-null和nullpointerException（空指针异常）"><span class="toc-number">2.1.5.</span> <span class="toc-text">5.null和nullpointerException（空指针异常）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#面向对象：因抽象而难"><span class="toc-number">2.1.6.</span> <span class="toc-text">面向对象：因抽象而难</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#面向过程结构化的设计弊端："><span class="toc-number">2.1.7.</span> <span class="toc-text">面向过程结构化的设计弊端：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#基本数据"><span class="toc-number">2.1.8.</span> <span class="toc-text">基本数据</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#俄罗斯方块"><span class="toc-number">2.1.9.</span> <span class="toc-text">俄罗斯方块</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#举例：-创建学生类"><span class="toc-number">2.1.10.</span> <span class="toc-text">举例： 创建学生类</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#练习：-4"><span class="toc-number">2.1.11.</span> <span class="toc-text">练习：</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#oop-day02"><span class="toc-number">2.2.</span> <span class="toc-text">oop.day02</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#参数："><span class="toc-number">2.2.1.</span> <span class="toc-text">参数：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#方法-1"><span class="toc-number">2.2.2.</span> <span class="toc-text">方法</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-方法的签名：方法名-参数列表"><span class="toc-number">2.2.2.1.</span> <span class="toc-text">1.方法的签名：方法名+参数列表</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-方法的重载-Overload-："><span class="toc-number">2.2.2.2.</span> <span class="toc-text">2.方法的重载(Overload)：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-构造方法：构造函数-构造器-构建器"><span class="toc-number">2.2.2.3.</span> <span class="toc-text">3.构造方法：构造函数&#x2F;构造器&#x2F;构建器</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-This：代词-指代当前对象，哪个对象调方法指的就是哪个对象"><span class="toc-number">2.2.2.4.</span> <span class="toc-text">4.This：代词 指代当前对象，哪个对象调方法指的就是哪个对象</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-引用类型数组："><span class="toc-number">2.2.2.5.</span> <span class="toc-text">5.引用类型数组：</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#任务："><span class="toc-number">2.2.3.</span> <span class="toc-text">任务：</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1）完成Cell类的的三个构造方法，并测试"><span class="toc-number">2.2.3.1.</span> <span class="toc-text">1）完成Cell类的的三个构造方法，并测试</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2）创建包oo-day03-包含："><span class="toc-number">2.2.3.2.</span> <span class="toc-text">2）创建包oo.day03,包含：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-2）CellTest类：测试重载与构造"><span class="toc-number">2.2.3.3.</span> <span class="toc-text">2.2）CellTest类：测试重载与构造</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-完成每周一做的两个编码题"><span class="toc-number">2.2.3.4.</span> <span class="toc-text">3.完成每周一做的两个编码题</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#oop-day03"><span class="toc-number">2.3.</span> <span class="toc-text">oop.day03</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-内存管理-由JVM来管理———了解"><span class="toc-number">2.3.1.</span> <span class="toc-text">1.内存管理:由JVM来管理———了解</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-堆"><span class="toc-number">2.3.1.1.</span> <span class="toc-text">1)堆:</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-栈"><span class="toc-number">2.3.1.2.</span> <span class="toc-text">2)栈:</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-继承："><span class="toc-number">2.3.2.</span> <span class="toc-text">2.继承：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-Super：指代当前对象的父类对象"><span class="toc-number">2.3.3.</span> <span class="toc-text">3.Super：指代当前对象的父类对象</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#代码演示"><span class="toc-number">2.3.3.1.</span> <span class="toc-text">代码演示</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-向上造型："><span class="toc-number">2.3.4.</span> <span class="toc-text">4.向上造型：</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#代码演示-1"><span class="toc-number">2.3.4.1.</span> <span class="toc-text">代码演示</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#练习-————-每人两次-oo-day04包中"><span class="toc-number">2.3.4.1.1.</span> <span class="toc-text">练习:————-每人两次(oo.day04包中)</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#oop-day04"><span class="toc-number">2.4.</span> <span class="toc-text">oop.day04</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-方法的重写："><span class="toc-number">2.4.1.</span> <span class="toc-text">1.方法的重写：</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1）发生在父子类中，方法名形成相同，参数列表相同，方法体不同"><span class="toc-number">2.4.1.1.</span> <span class="toc-text">1）发生在父子类中，方法名形成相同，参数列表相同，方法体不同</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2）重写方法被调用时，看对象的类型"><span class="toc-number">2.4.1.2.</span> <span class="toc-text">2）重写方法被调用时，看对象的类型</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3）重写必须加public"><span class="toc-number">2.4.1.3.</span> <span class="toc-text">3）重写必须加public</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#代码演示："><span class="toc-number">2.4.1.3.1.</span> <span class="toc-text">代码演示：</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#重写遵循”两同两小一大”原则"><span class="toc-number">2.4.2.</span> <span class="toc-text">重写遵循”两同两小一大”原则:</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-重写与重载的区别：—-常见面试题"><span class="toc-number">2.4.3.</span> <span class="toc-text">2.重写与重载的区别：—-常见面试题</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1）重写（Override）"><span class="toc-number">2.4.3.1.</span> <span class="toc-text">1）重写（Override）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2）重载（Overload）"><span class="toc-number">2.4.3.2.</span> <span class="toc-text">2）重载（Overload）</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#代码演示-2"><span class="toc-number">2.4.3.2.1.</span> <span class="toc-text">代码演示</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#封装的意义"><span class="toc-number">2.4.4.</span> <span class="toc-text">封装的意义:</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-Package"><span class="toc-number">2.4.5.</span> <span class="toc-text">3.Package</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#import："><span class="toc-number">2.4.6.</span> <span class="toc-text">import：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-访问控制修饰符："><span class="toc-number">2.4.7.</span> <span class="toc-text">4.访问控制修饰符：</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#代码演示-3"><span class="toc-number">2.4.7.1.</span> <span class="toc-text">代码演示</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-Static：静态的"><span class="toc-number">2.4.8.</span> <span class="toc-text">5.Static：静态的</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1）静态变量："><span class="toc-number">2.4.8.1.</span> <span class="toc-text">1）静态变量：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2）静态方法："><span class="toc-number">2.4.8.2.</span> <span class="toc-text">2）静态方法：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3）静态块：属于类的代块"><span class="toc-number">2.4.8.3.</span> <span class="toc-text">3）静态块：属于类的代块</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#代码演示-4"><span class="toc-number">2.4.8.3.1.</span> <span class="toc-text">代码演示</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-Final：最终的"><span class="toc-number">2.4.9.</span> <span class="toc-text">6.Final：最终的</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Final修饰成员变量-只有两种初始化方式"><span class="toc-number">2.4.9.1.</span> <span class="toc-text">Final修饰成员变量:只有两种初始化方式:</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#代码演示-5"><span class="toc-number">2.4.9.1.1.</span> <span class="toc-text">代码演示</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#成员变量：（类的里边，方法外边-有两种变量）"><span class="toc-number">2.4.9.2.</span> <span class="toc-text">成员变量：（类的里边，方法外边.有两种变量）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#成员变量："><span class="toc-number">2.4.9.3.</span> <span class="toc-text">成员变量：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#局部变量："><span class="toc-number">2.4.9.4.</span> <span class="toc-text">局部变量：</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#练习：-5"><span class="toc-number">2.4.9.4.1.</span> <span class="toc-text">练习：</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#oop-day05："><span class="toc-number">2.5.</span> <span class="toc-text">oop.day05：</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-Static-final常量：应用率高"><span class="toc-number">2.5.1.</span> <span class="toc-text">1.Static final常量：应用率高</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1）常量必须声明同时初始化"><span class="toc-number">2.5.1.1.</span> <span class="toc-text">1）常量必须声明同时初始化</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2）通过类名点来访问，不可被改变"><span class="toc-number">2.5.1.2.</span> <span class="toc-text">2）通过类名点来访问，不可被改变</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3）建议：常量名所有字母都大写，多个单词用-分隔"><span class="toc-number">2.5.1.3.</span> <span class="toc-text">3）建议：常量名所有字母都大写，多个单词用_分隔</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4）编译器在编译时会把常量直接替换为具体的值，效率高"><span class="toc-number">2.5.1.4.</span> <span class="toc-text">4）编译器在编译时会把常量直接替换为具体的值，效率高</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-抽象方法"><span class="toc-number">2.5.2.</span> <span class="toc-text">2.抽象方法:</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-抽象类："><span class="toc-number">2.5.3.</span> <span class="toc-text">2.抽象类：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-接口："><span class="toc-number">2.5.4.</span> <span class="toc-text">3.接口：</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#代码演示-6"><span class="toc-number">2.5.4.1.</span> <span class="toc-text">** 代码演示**</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#类、接口、继承使用笔记"><span class="toc-number">2.5.4.2.</span> <span class="toc-text">类、接口、继承使用笔记</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#接口和抽象类"><span class="toc-number">2.5.4.3.</span> <span class="toc-text">接口和抽象类</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#练习：-6"><span class="toc-number">2.5.4.3.1.</span> <span class="toc-text">练习：</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#设计规则："><span class="toc-number">2.5.4.4.</span> <span class="toc-text">设计规则：</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#oop-day06"><span class="toc-number">2.6.</span> <span class="toc-text">oop.day06</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-多态："><span class="toc-number">2.6.1.</span> <span class="toc-text">1.多态：</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1）多态的意义："><span class="toc-number">2.6.1.1.</span> <span class="toc-text">1）多态的意义：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2）向上造型（自动类型转换）："><span class="toc-number">2.6.1.2.</span> <span class="toc-text">2）向上造型（自动类型转换）：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3）强制类型转换-有可能报错-，成功的条件有两点："><span class="toc-number">2.6.1.3.</span> <span class="toc-text">3）强制类型转换(有可能报错)，成功的条件有两点：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4）强转时若不符合以上两个条件，能发生ClassCastExcetion类型转换异常"><span class="toc-number">2.6.1.4.</span> <span class="toc-text">4）强转时若不符合以上两个条件，能发生ClassCastExcetion类型转换异常</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-成员内部类"><span class="toc-number">2.6.2.</span> <span class="toc-text">2.成员内部类</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#代码演示-7"><span class="toc-number">2.6.2.1.</span> <span class="toc-text">代码演示</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-匿名内部类："><span class="toc-number">2.6.3.</span> <span class="toc-text">3.匿名内部类：</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#演示内部类"><span class="toc-number">2.6.3.1.</span> <span class="toc-text">演示内部类</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#问-内部类有主见独立的-class吗"><span class="toc-number">2.6.3.1.1.</span> <span class="toc-text">问:内部类有主见独立的.class吗?</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-面向对象总结："><span class="toc-number">2.6.4.</span> <span class="toc-text">4.面向对象总结：</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-封装："><span class="toc-number">2.6.4.1.</span> <span class="toc-text">1.封装：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-继承：-1"><span class="toc-number">2.6.4.2.</span> <span class="toc-text">2.继承：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-多态"><span class="toc-number">2.6.4.3.</span> <span class="toc-text">3.多态:</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#3-1-多态重要知识点"><span class="toc-number">2.6.4.3.1.</span> <span class="toc-text">3.1:多态重要知识点</span></a></li></ol></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#JAVA-常用API"><span class="toc-number">3.</span> <span class="toc-text">JAVA - 常用API</span></a></li></ol>
+        
+    </div>
+</aside>
+
+</header>
+
+        <div id="content" class="content">
+            <div id="wrapper" class="wrapper" style="max-width: 800px">
+                <article class="article" itemscope itemprop="blogPost">
+    
+    <header class="article-header">
+        
+        <h1 itemprop="name">
+            2017年某内-JAVA学习笔记
+        </h1>
+        
+        <div class="article-meta clearfix">
+            <a class="article-date" href="http://yoursite.com/2020/05/20/017%E5%B9%B4%E6%9F%90%E5%86%85-JAVA/index.html">
+    
+    <i class="icon-calendar"></i>
+    
+    <time datetime="2020-05-19T17:40:00.000Z" itemprop="datePublished">2020-05-20</time>
+</a>
+
+            
+
+        </div>
+    </header>
+    
+    <section class="article-body markdown-body">
+        
+        <h1 id="1-基础-basic-讲师：王克晶"><a href="#1-基础-basic-讲师：王克晶" class="headerlink" title="1:基础 (basic) 讲师：王克晶"></a>1:基础 (basic) 讲师：王克晶</h1><h2 id="day01"><a href="#day01" class="headerlink" title="day01"></a>day01</h2><h3 id="计算机分类："><a href="#计算机分类：" class="headerlink" title="计算机分类："></a>计算机分类：</h3><pre><code>1。PC机，个人电脑
+2。处理大数据请求的高性能计算机
+3。只能终端的；手机，掌上电脑，可视电话
+4。嵌入式设备：除了上面3种以外带CPU的
+
+Windows操作系统---------PC机
+Linux操作系统------------服务器，智能终端，嵌入式设备
+（1.）不带图形界面的--真正的服务器系统 （2）带图形界面的</code></pre><a id="more"></a>
+<h3 id="JAVA主要是用于服务器端的开发"><a href="#JAVA主要是用于服务器端的开发" class="headerlink" title="JAVA主要是用于服务器端的开发"></a><strong>JAVA主要是用于服务器端的开发</strong></h3><pre><code>Linux：需要快速的操作速度------基于命令的
+1）开源的操作系统，免费
+主要用于服务器端，而JAVA主要是服务器端开发
+2）Linux与WINDOWS目录结构的区别：
+2.1）文件系统不同
+LINUX：目录    WINDOWS：盘符
+2.2）外部设备映射不同：
+LINUX：挂载点  WINDOWS：盘符
+2.3）安全级别不同：
+LINUX：高      WINDOWS：盘符
+3）  pwd：显示当前工作目录
+      lS：查看当前工作目录的内容
+      cd：改变当前工作目录
+       绝对路径：相对于根目录的位置，与/开头
+       相对路径：相对于当前目录的位置   ..上一级目录    .当前目录</code></pre><h3 id="C语言编译运行过程："><a href="#C语言编译运行过程：" class="headerlink" title="C语言编译运行过程："></a>C语言编译运行过程：</h3><pre><code>.c源文件，经过编译，直接变为可执行文件</code></pre><h3 id="JAVA语言编译运行过程："><a href="#JAVA语言编译运行过程：" class="headerlink" title="JAVA语言编译运行过程："></a>JAVA语言编译运行过程：</h3><pre><code>1）.java源文件经过编译，生成.class字节码文件
+2）JVM加载.class并运行.class（0和1）
+JAVA，跨平台，一次编程到处使用
+
+
+1.编译运行过程
+  1.1）编译期：.java源文件，经过编译，生成.class字节码
+  1.2）运行期：JVM加载.class并运行.class（0和1）
+2名词解释：------常见面试题
+  2.1）JVM：java虚拟机
+           加载.class并运行.class（0和1）
+  2.2）JRE：java运行环境
+           除了包含JVM以外，还包含运行java程序所必须的环境
+           JRE=JVM+java系统类库
+  2.3）JDK：java开发工具包
+           除了包含JRE以外还包含开发java程序所必须的命令工具
+        JDK=JRE+编译.运行等命令工具
+说明：
+      运行java程序的最小环境为JRE
+      开发java程序的最小环境为JDK
+3.配置环境变量(Linux系统)：-------了解
+  3.1）JAVA_HOME:指向JDK的安装目录
+  3.2）CLASSPATH：表示类的搜索路径，一般简写为.
+  3.3）PATH：指向jdk下的bin目录</code></pre><h3 id="开发工具-eclipse："><a href="#开发工具-eclipse：" class="headerlink" title="开发工具 eclipse："></a>开发工具 eclipse：</h3><pre><code>IBM开发，开源的，免费，只需解压就行</code></pre><h3 id="JAVA开发步骤："><a href="#JAVA开发步骤：" class="headerlink" title="JAVA开发步骤："></a>JAVA开发步骤：</h3><pre><code>1.1）新建一个JAVA项目/工程
+1.2）新建一个Java包
+1.3）新建一个Java类</code></pre><h2 id="day02"><a href="#day02" class="headerlink" title="day02"></a>day02</h2><h3 id="一：变量：存数的，代词，指代的就是它所存的那个数"><a href="#一：变量：存数的，代词，指代的就是它所存的那个数" class="headerlink" title="一：变量：存数的，代词，指代的就是它所存的那个数"></a>一：变量：存数的，代词，指代的就是它所存的那个数</h3><h4 id="1）声明："><a href="#1）声明：" class="headerlink" title="1）声明："></a>1）声明：</h4><pre><code>int a；//声明一个整形变量，名为a
+int b，c，d；//声明三个整形变量，名为b，c，d；</code></pre><h4 id="2）命名："><a href="#2）命名：" class="headerlink" title="2）命名："></a>2）命名：</h4><pre><code>  2.1）只能包含字母，数字，_和$符，并且不能以数字开头      
+2.2）严格区分大小写     
+2.3）不能使用关键字      
+2.4）可以使用中文，但不建议
+     建议：见名知意，变量命名为“驼峰命名法”</code></pre><h4 id="3）初始化-第一次赋值"><a href="#3）初始化-第一次赋值" class="headerlink" title="3）初始化:第一次赋值"></a>3）初始化:第一次赋值</h4><pre><code>3.1）声明的同时初始化
+3.2）先声明后初始化
+     int a；//声明整形变量a
+     a=5；//给变量a赋值为5</code></pre><h4 id="4）使用："><a href="#4）使用：" class="headerlink" title="4）使用："></a>4）使用：</h4><pre><code>4.1）对变量的使用就是对它所存那个数的使用
+   int a=5；
+   int b=a+10；//取出a的值5，加10后，在赋值给变量b
+   int a=a+10；//取出a的值5，加10后，在赋值给变量a/在a本身基础上增10
+4.2）变量的使用要与数据类型匹配
+4.3）变量再用之前必须声明并初始化</code></pre><h3 id="二：基本数据类型-常用"><a href="#二：基本数据类型-常用" class="headerlink" title="二：基本数据类型(常用)"></a>二：基本数据类型(常用)</h3><h4 id="1-int：整形，只能装整数，4个字节，-21个多亿到21个多亿"><a href="#1-int：整形，只能装整数，4个字节，-21个多亿到21个多亿" class="headerlink" title="1.int：整形，只能装整数，4个字节，-21个多亿到21个多亿"></a>1.int：整形，只能装整数，4个字节，-21个多亿到21个多亿</h4><pre><code> 1.1）整数直接默认为int型，但不能超范围，超范围编译错误
+ 1.2）两个整数相除，结果还是整数，小数位无条件舍弃
+ 1.3）整数运算时超出范围则发生溢出，溢出是要避免的//直接量超范围为编译错误，运算时超范围则发生溢出
+方法：Integer.MAX_VALUE表示：  int最大值</code></pre><h4 id="2-long：长整型，只能装整数，8个字节，很大很大很大；数字后面要加L"><a href="#2-long：长整型，只能装整数，8个字节，很大很大很大；数字后面要加L" class="headerlink" title="2.long：长整型，只能装整数，8个字节，很大很大很大；数字后面要加L"></a>2.long：长整型，只能装整数，8个字节，很大很大很大；数字后面要加L</h4><pre><code>2.1）长整型直接量需要在数字后加L
+2.2）运算时若有可能溢出，建议在第一个数字后加L
+2.3）System.currentTimeMillis（）{获取毫秒}获取自1970年1月1日0点0分到此时此    刻的毫秒数</code></pre><h4 id="3-double：浮点型，8个字节，只能装小数"><a href="#3-double：浮点型，8个字节，只能装小数" class="headerlink" title="3.double：浮点型，8个字节，只能装小数"></a>3.double：浮点型，8个字节，只能装小数</h4><pre><code>3.1）浮点数直接量默认为double型
+3.2）精确运算场合不能使用double，可以使用BigDecimal</code></pre><h4 id="4-boolean：布尔型，1个字节，只能装ture和false"><a href="#4-boolean：布尔型，1个字节，只能装ture和false" class="headerlink" title="4.boolean：布尔型，1个字节，只能装ture和false"></a>4.boolean：布尔型，1个字节，只能装ture和false</h4><h4 id="5-char：字符型，2个字节"><a href="#5-char：字符型，2个字节" class="headerlink" title="5.char：字符型，2个字节"></a>5.char：字符型，2个字节</h4><pre><code>5.1)java中的char采用Unicode编码格式，一个字符char对应一个码int
+      表现的形式是char字符，但实质上存储的是int码，int码只能在0到65535之间
+     ASCII码：
+     “a”97，，，，”A“65，，，，&quot;0&quot;48      
+5.2)字符必须放在单引号之间，有且仅有一个
+5.3）特殊字符需要通过\来转义</code></pre><h4 id="6-byte"><a href="#6-byte" class="headerlink" title="6.byte"></a>6.byte</h4><h4 id="7-short"><a href="#7-short" class="headerlink" title="7.short"></a>7.short</h4><h4 id="8-float"><a href="#8-float" class="headerlink" title="8.float"></a>8.float</h4><h3 id="三：基本数据类型间的转换"><a href="#三：基本数据类型间的转换" class="headerlink" title="三：基本数据类型间的转换"></a>三：基本数据类型间的转换</h3><h4 id="1）两种方式"><a href="#1）两种方式" class="headerlink" title="1）两种方式"></a>1）两种方式</h4><pre><code>1.1）自动类型转换：从小类型到大类型  //byte，short，int，long，float，double
+1.2）强制类型转换：从大类型到小类型  //语法：（要转换为的类型）有可能会发            生溢出，有可能会丢失精度</code></pre><h4 id="2）两种规格"><a href="#2）两种规格" class="headerlink" title="2）两种规格"></a>2）两种规格</h4><pre><code>2.1）整数直接量可以直接赋值给byte，short，char，但不能超范围
+2.2）byte，short，char型数据参与运算时，先一律转为int型再运算</code></pre><h3 id="四：Scanner用法"><a href="#四：Scanner用法" class="headerlink" title="四：Scanner用法"></a>四：Scanner用法</h3><pre><code>  1）在package下：import java.util.Scanner;
+  2）在main（）方法中：Scanner abc=new Scanner（System.in）;
+  3）在第二步之下：int age=scan.nextInt();
+Scanner是用户输入的声明</code></pre><h2 id="day03"><a href="#day03" class="headerlink" title="day03"></a>day03</h2><h3 id="1-运算符"><a href="#1-运算符" class="headerlink" title="1.运算符"></a>1.运算符</h3><pre><code>1)算数运算：+，-，*，/，%，++，--
+2)关系运算：&gt;,&lt;,&gt;=,&lt;=,==,!=(boolean)
+3)逻辑运算:&amp;&amp;并且  ||或者  !取反(boolean)
+4)赋值运算:=  +=  -=  *=  /=  %=
+5)字符连接运算:+
+6)条件（三目）运算:boolean?数1：数2</code></pre><h3 id="2-分支结构"><a href="#2-分支结构" class="headerlink" title="2.分支结构"></a>2.分支结构</h3><pre><code>1):if结构：满足条件就干事，不满足条件就不干事---1条路
+2):if else结构：满足条件就干事，不满足条件干另一件事---2条路
+3):else if结构：if ....else if: 多条路
+4):switch case结构：多条路      
+        优点：效率高～结构清晰
+        缺点：只能是整数（byte`char`short`int）～还只能判断相等
+             当缺点不再是缺点的时候，就只剩优点了，那就是首选
+             break：退出switch case结构；
+             用switch能实现的，用if 。。。else if都可以实现。用if。。。else if可以实现的，switch不一定可以实现
+
+ 任何复杂的程序都可以通过三种结构来实现：
+  1）顺序结构：由上往下逐行执行，每句必走
+  2）分支结构：有条件的执行某语句，并非每句必走
+  3）循环结构：
+           1)while:
+           2)do....while:
+           3)for:</code></pre><h3 id="练习："><a href="#练习：" class="headerlink" title="练习："></a>练习：</h3><pre><code>1，联系5个案例：
+1） agerange 年龄判断程序
+2） leapyear 润年判断程序
+3） cashier 柜台收银程序
+4） scorelevel 成绩等级判断程序
+5） commandbyswitch 命令解析程序
+2.练习operdemo运算符
+3.完成课后作业
+3.1） 第二天的11.12题
+3.2） 第三天的所有</code></pre><h2 id="day04"><a href="#day04" class="headerlink" title="day04"></a>day04</h2><h3 id="一：变量及作用域"><a href="#一：变量及作用域" class="headerlink" title="一：变量及作用域"></a>一：变量及作用域</h3><h4 id="1-变量的作用域-作用范围："><a href="#1-变量的作用域-作用范围：" class="headerlink" title="1.变量的作用域/作用范围："></a>1.变量的作用域/作用范围：</h4><pre><code>从变量的声明开始到包含它最近的大括号结束</code></pre><h4 id="2-变量的同名问题："><a href="#2-变量的同名问题：" class="headerlink" title="2.变量的同名问题："></a>2.变量的同名问题：</h4><pre><code>作用域重叠时，变量不能同名</code></pre><h3 id="二：循环"><a href="#二：循环" class="headerlink" title="二：循环"></a>二：循环</h3><h4 id="1-循环：反复去执行一段可能相同或相似的代码"><a href="#1-循环：反复去执行一段可能相同或相似的代码" class="headerlink" title="1.循环：反复去执行一段可能相同或相似的代码"></a>1.循环：反复去执行一段可能相同或相似的代码</h4><h4 id="2-循环三要素："><a href="#2-循环三要素：" class="headerlink" title="2.循环三要素："></a>2.循环三要素：</h4><pre><code>1）循环变量的初始化
+2）循环的条件（以循环变量为基础）
+3）循环变量的改变（向着循环的结束变）
+   循环变量：在循环过程中所改变的那个数</code></pre><h4 id="Do-while和while的区别"><a href="#Do-while和while的区别" class="headerlink" title="*** Do while和while的区别:"></a>*** Do while和while的区别:</h4><pre><code>While是先判后执行
+Do while是先执行判断
+固定循环次数用后循环</code></pre><h4 id="循环变量："><a href="#循环变量：" class="headerlink" title="循环变量："></a>循环变量：</h4><pre><code>所跑得圈数count                                    圈数为0
+1）int count=0；                   够三圈吗？不够 跑一圈 圈数为1
+2）count&lt;3；                       够三圈吗？不够 跑一圈 圈数为2
+3）count++；                       够三圈吗？不够 跑一圈 圈数为3
+                                                够三圈吗？够了</code></pre><h4 id="3-循环结构"><a href="#3-循环结构" class="headerlink" title="3.循环结构"></a>3.循环结构</h4><pre><code>1)while:先判断后执行，有可能一次都不执行
+2)do....while:先执行后判断，至少会执行一次第一要素与第三要素相同时首选
+3)for:应用率最高，更适合实现固定次数循环（只要固定次数，首选）
+4.break:退出循环 是和循环体一起使用
+5.continue:跳过循环体中剩余语句而进入下一句循环，，，只能用于循环中</code></pre><h4 id="练习：-1"><a href="#练习：-1" class="headerlink" title="练习："></a>练习：</h4><pre><code>1.猜数字之while
+2.猜数字之do...while
+3.随机加法运算器之for</code></pre><h3 id="三：笔记"><a href="#三：笔记" class="headerlink" title="三：笔记"></a>三：笔记</h3><h4 id="任何复杂的结构程序，都可以通过三种结构来实现"><a href="#任何复杂的结构程序，都可以通过三种结构来实现" class="headerlink" title="任何复杂的结构程序，都可以通过三种结构来实现"></a>任何复杂的结构程序，都可以通过三种结构来实现</h4><pre><code>顺序结构：从上往下，逐行执行，每句必走
+分支结构：有条件的去执行某语句一次，并非每句必走
+循环结构：有条件的去执行某语句多次，并非每句必走</code></pre><h4 id="随机数：Math-random-——0-0到0-999999999999999999…"><a href="#随机数：Math-random-——0-0到0-999999999999999999…" class="headerlink" title="随机数：Math.random()——0.0到0.999999999999999999…."></a>随机数：Math.random()——0.0到0.999999999999999999….</h4><pre><code>*1000-------------------------0.0到999.9999999999999999....
+(int)强转成int
++1-----------------------------1.0到1000.999999999999999....</code></pre><h2 id="day05"><a href="#day05" class="headerlink" title="day05"></a>day05</h2><h3 id="一：循环"><a href="#一：循环" class="headerlink" title="一：循环"></a>一：循环</h3><h4 id="1-三种循环的更佳使用情况："><a href="#1-三种循环的更佳使用情况：" class="headerlink" title="1.三种循环的更佳使用情况："></a>1.三种循环的更佳使用情况：</h4><pre><code>1）while：“当。。”循环
+2）do。。。while：“直到。。。”循环（当第一要素与第三要素相同时，首选）
+3）for：固定系数循环</code></pre><h4 id="2-嵌套循环："><a href="#2-嵌套循环：" class="headerlink" title="2.嵌套循环："></a>2.嵌套循环：</h4><pre><code>嵌套循环就是在循环中再套一个循环
+
+1）循环中套循环，一般多行多列时使用，外层控制行，内层控制列
+2）执行规则：外层循环走一次，内层循环走所有次
+3）建议：嵌套的层数越少越好，能用一层不用两层，能用两层不用三层，若必须超过三层才能实现，说明设计有问题。  
+4）break；只能跳出一次循环
+5）\t 规定8个空格里</code></pre><h4 id="3-程序-算法-数据结构"><a href="#3-程序-算法-数据结构" class="headerlink" title="3.程序=算法+数据结构"></a>3.程序=算法+数据结构</h4><pre><code>1）算法：解决问题的流程/步骤（顺序，分支，循环）
+2）数据结构：将数据按照某种特定的结构来保存
+ *数怎么存
+ *设计良好的数据结构会导致好的算法</code></pre><h3 id="二：数据结构-数组"><a href="#二：数据结构-数组" class="headerlink" title="二：数据结构-数组"></a>二：数据结构-数组</h3><h4 id="1）数组"><a href="#1）数组" class="headerlink" title="1）数组"></a>1）数组</h4><h5 id="1）数据概述"><a href="#1）数据概述" class="headerlink" title="1）数据概述"></a>1）数据概述</h5><pre><code>数组是相同数据类型元素组成的集合</code></pre><h5 id="2）数组类型"><a href="#2）数组类型" class="headerlink" title="2）数组类型"></a>2）数组类型</h5><pre><code>是一种数据类型（引用类型）int[] a=new int[4];
+//声明整形数组a，包含4个元素，每个元素都是int型，默认值0（double型默认为0.0. boolean默认为false）</code></pre><h5 id="3）数组的定义"><a href="#3）数组的定义" class="headerlink" title="3）数组的定义"></a>3）数组的定义</h5><pre><code>：int[] arr=new int[4];</code></pre><h5 id="4：数组的初始化："><a href="#4：数组的初始化：" class="headerlink" title="4：数组的初始化："></a>4：数组的初始化：</h5><pre><code>int[] arr=new int[4]//0,0,0,0
+int[] arr={1,4,5,8};//1,4,5,8
+int[] arr=new int[]{1,4,5,8};//1,4,5,8
+int[] arr;
+arr={1,4,5,8};//编译错误 此方法只能
+arr=new int[]{1,4,5,8};//正确</code></pre><h5 id="5：数组的访问："><a href="#5：数组的访问：" class="headerlink" title="5：数组的访问："></a>5：数组的访问：</h5><pre><code>5.1）通过(数组名.length)可以获取数组的长度    
+     int[] arr=new int[5];
+     System.out.println(arr.length);//5
+
+5.2）通过下标来访问数组中的元素
+         下标从0开始，最大到（数组.length-1）
+      int[] arr=new int[3];
+       arr[0]=100;给arr中的第一个元素赋值为100；
+        arr[1]=200;给arr中的第二个元素赋值为200；
+        arr[2]=300;给arr中的第三个元素赋值为300；
+        arr[4]=400;数组下标越界异常；
+System.out.println(arr[arr.length-1]);输出最后一个元素</code></pre><h5 id="6）数组的遍历："><a href="#6）数组的遍历：" class="headerlink" title="6）数组的遍历："></a>6）数组的遍历：</h5><pre><code>int[] arr=new int[10];//假设一个最大值
+int max = arr[0]; //假设第1个元素最大
+    for(int i=0;i&lt;arr.length;i++){  //遍历所有元素
+      arr[i]=100;//给全部元素赋值为100
+     }
+ for(int i=0;i&lt;arr.lenrth;i++){
+     System.out.println(arr[i]);//正序
+ }
+ for(int i&lt;=arr.length-1;i&gt;=0;i--){
+      System.out.println(arr[i]);//倒序
+ }</code></pre><h5 id="7）数组的复制："><a href="#7）数组的复制：" class="headerlink" title="7）数组的复制："></a>7）数组的复制：</h5><pre><code>7.1）System.arraycopy(a,1,a1,0,4);更灵活，效率更高
+7.2）int[] a1=arrays.copyOf(a,6);可以实现数组的扩容
+    arr=Arrays.copyOf(a,a.length+1);//数组的扩容，扩容是新建了一个更大的数组元素把原来的元素复制过去了并且还多了一个元素位置</code></pre><h5 id="8）数组的排序："><a href="#8）数组的排序：" class="headerlink" title="8）数组的排序："></a>8）数组的排序：</h5><pre><code>8.1）Arrays.sort(arr);//对arr升序排列，效率高
+8.2）冒泡的排序：
+8.2.1）四个数冒三轮
+8.2.2）每一轮都从第1个元素开始冒 ，每一次都是和它的下一个元素比
+8.2.3）冒出来的就不带它玩了，不同的数据使用不同的排序方式，优劣是不同的</code></pre><h5 id="冒泡排序方法代码："><a href="#冒泡排序方法代码：" class="headerlink" title="冒泡排序方法代码："></a>冒泡排序方法代码：</h5><pre><code>for(int i=0;i&lt;arr.length-1;i++){//控制轮
+for（int j=0；j&lt;arr.length-1-i;j++）{//控制次数
+    if（arr[j]&gt;arr[j+1]）{//每一次都和它的下一个元素比
+        int t=arr[j];
+        arr[j]=arr[j+1];
+        arr[j+1]=t;
+    }</code></pre><h5 id="Java提供的升序排序方式-Arrays-sort-arr"><a href="#Java提供的升序排序方式-Arrays-sort-arr" class="headerlink" title="*Java提供的升序排序方式  Arrays.sort(arr);"></a>*Java提供的升序排序方式  Arrays.sort(arr);</h5><pre><code>插入排序
+快速排序</code></pre><h5 id="练习：-2"><a href="#练习：-2" class="headerlink" title="练习："></a>练习：</h5><pre><code>1.九九乘法表
+
+2.找到数组中最大值并扩容放在最后一位（最小值，扩容两个，最小的放倒数2，最大放倒数1）</code></pre><h3 id="三：排序-冒泡排序"><a href="#三：排序-冒泡排序" class="headerlink" title="三：排序- 冒泡排序"></a>三：排序- 冒泡排序</h3><h4 id="1-冒泡排序"><a href="#1-冒泡排序" class="headerlink" title="1: 冒泡排序"></a>1: 冒泡排序</h4><pre><code>1.1）声明整形数组arr，包含10个元素，将每个元素赋值为0-99的随机数输出arr中每个元素的值
+1.2）冒泡算法对arr进行升序排序
+1.3）遍历输出arr中每个元素的值</code></pre><h5 id="步骤如下："><a href="#步骤如下：" class="headerlink" title="步骤如下："></a>步骤如下：</h5><pre><code>1添加元素
+2循环
+3随机添加1到99之间的元素
+4输出元素
+5假设一个最大值
+6遍历剩余的元素
+7若剩余的元素币假设这个元素还大
+8修改最大的元素为它
+9输出最大值
+10增加一个扩容
+11将最大值赋值给arr中的最后一个元素
+12遍历
+13输出
+
+1控制轮数
+2控制次数
+3每一次都和它的下一个元素比
+4比它大就换位置
+5追尾再和它现在的位置下一个比
+6再换位置
+7输出
+8再循环一次
+9输出</code></pre><h5 id="例子：求数组元素的最大值"><a href="#例子：求数组元素的最大值" class="headerlink" title="例子：求数组元素的最大值"></a>例子：求数组元素的最大值</h5><pre><code>    int[] arr = new int[10];
+    for(int i=0;i&lt;arr.length;i++){
+        arr[i] = (int)(Math.random()*100);
+        System.out.println(arr[i]);
+    }    
+    int max = arr[0]; //假设第1个元素最大
+    for(int i=1;i&lt;arr.length;i++){ //遍历剩余元素
+        if(arr[i]&gt;max){ //若剩余元素比max还大
+            max=arr[i]; //修改max的值为较大的元素
+        }
+    }
+    System.out.println(&quot;最大值为:&quot;+max);    
+    arr = Arrays.copyOf(arr,arr.length+1);//扩大一个容量
+    //将最大值max赋值给arr中的最后一个元素
+    arr[arr.length-1] = max;
+    for(int i=0;i&lt;arr.length;i++){
+        System.out.println(arr[i]);
+
+ * 要求:
+ * 1)声明整型数组arr，包含10个元素
+ *   遍历数组，给每个元素赋值为0到99的随机数
+ *   输出数组中的每一个元素的值
+ * 2)冒泡算法对arr进行升序排序
+ * 3)遍历数组，输出数组中的每一个元素的值
+ */
+
+int[] arr = new int[10];
+for(int i=0;i&lt;arr.length;i++){
+    arr[i] = (int)(Math.random()*100);
+    System.out.println(arr[i]);
+}    
+for(int i=0;i&lt;arr.length-1;i++){ //控制轮数
+    for(int j=0;j&lt;arr.length-1-i;j++){ //控制次数
+        if(arr[j]&lt;arr[j+1]){
+            int t = arr[j];
+            arr[j] = arr[j+1];
+            arr[j+1] = t;
+        }
+    }
+}        
+System.out.println(&quot;排序后:&quot;);
+for(int i=0;i&lt;arr.length;i++){
+    System.out.println(arr[i]);</code></pre><h6 id="例子：九九乘法表"><a href="#例子：九九乘法表" class="headerlink" title="例子：九九乘法表"></a>例子：九九乘法表</h6><pre><code>for(int num=1;num&lt;=9;num++){ //控制行
+for(int i=1;i&lt;=num;i++){ //控制列
+  System.out.print(i+&quot;*&quot;+num+&quot;=&quot;+i*num+&quot;\t&quot;);
+  }
+ System.out.println(); //换行</code></pre><h2 id="day06"><a href="#day06" class="headerlink" title="day06"></a>day06</h2><h3 id="质数："><a href="#质数：" class="headerlink" title="质数："></a>质数：</h3><pre><code>质数:又称素数,只能被1和它本身整除的数
+何时是质数:取余所有都不得0
+何时不是质数:取余只要有得0的</code></pre><h4 id="for-inr-i-2-i-lt-Math-sqrt-num-i-java中求平方跟"><a href="#for-inr-i-2-i-lt-Math-sqrt-num-i-java中求平方跟" class="headerlink" title="for(inr i=2;i&lt;=Math.sqrt(num);i++)//java中求平方跟"></a>for(inr i=2;i&lt;=Math.sqrt(num);i++)//java中求平方跟</h4><h3 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h3><h4 id="1-方法：函数、过程"><a href="#1-方法：函数、过程" class="headerlink" title="1.方法：函数、过程"></a>1.方法：函数、过程</h4><pre><code>1）用于封装一段特定的业务逻辑功能
+2）方法应尽可能的独立，一个方法只干一件事
+3）方法可以被反复的调用多次
+4）减少代码的重复，便于程序的维护，便于团队的协作开发</code></pre><h4 id="2-方法的定义："><a href="#2-方法的定义：" class="headerlink" title="2.方法的定义："></a>2.方法的定义：</h4><pre><code>就是自己做的方法
+修饰词  返回值类型  方法名（参数列表）{
+        方法体
+     }</code></pre><h4 id="3-方法的调用："><a href="#3-方法的调用：" class="headerlink" title="3.方法的调用："></a>3.方法的调用：</h4><pre><code>1）无返回值：方法名（有参传参）
+2）数据类型 变量=方法名（有参传参）</code></pre><h4 id="4-return："><a href="#4-return：" class="headerlink" title="4.return："></a>4.return：</h4><pre><code>4.1）return 值；//1.1）结束方法的执行，1.2）返回结果给调用方      用于有返回值
+4.2）return；//结束；用于无返回值</code></pre><h4 id="5-猜字符游戏："><a href="#5-猜字符游戏：" class="headerlink" title="5.猜字符游戏："></a>5.猜字符游戏：</h4><pre><code>方法可以有返回值也可以没有返回值
+5.1）无返回值---返回值类型写成void
+5.2）有返回值---返回值类型写成具体的数据类型即可
+
+若方法执行完以后，
+方法可以有参数，也 可以没有参数，有参数可以使方法更灵活</code></pre><h4 id="找最大值的算法："><a href="#找最大值的算法：" class="headerlink" title="找最大值的算法："></a>找最大值的算法：</h4><pre><code>1）假设第一个元素的值最大
+
+int max=arr[0];
+
+2)遍历剩余元素，若剩余元素比max大，则修改max为较大值
+  for（int i=1；i&lt;arr.length;i++）
+  if(arr[i]&gt;max){
+  max=arr[i];
+    }
+ }</code></pre><h4 id="训练：猜字符游戏项目思路："><a href="#训练：猜字符游戏项目思路：" class="headerlink" title="训练：猜字符游戏项目思路："></a>训练：猜字符游戏项目思路：</h4><h5 id="1，设计数据结构-—–-gt-数怎么存"><a href="#1，设计数据结构-—–-gt-数怎么存" class="headerlink" title="1，设计数据结构:—–&gt;数怎么存"></a>1，设计数据结构:—–&gt;数怎么存</h5><pre><code>1.1）char[] chs;//用于存储随机的字符数组
+1.2）char[] input;//用户输入的字符数组
+1.3）int letterRight；//字符对个数//
+     int positionRight//位置对个数//
+     int[] result;//对比的结果
+1.4）int score；//得分
+     int count；//猜错的次数</code></pre><h5 id="2-设计程序结构：方法"><a href="#2-设计程序结构：方法" class="headerlink" title="2.设计程序结构：方法"></a>2.设计程序结构：方法</h5><pre><code>2.1）主方法：
+ public static void main(String[] args) {
+       //...
+ }
+
+2.2）生成随机的字符数组：
+    public static char[] generate（int level）{
+      char[] chs=new char[level];
+       //...
+     return chs;
+    }
+
+2.3)对比：随机字符数组与用户输入的字符数组
+    public static int[] check（char[] chs,char[] input）{
+      int[] result=new int[2];
+        //...
+     return result;
+    }</code></pre><h5 id="3-设计算法"><a href="#3-设计算法" class="headerlink" title="3.设计算法"></a>3.设计算法</h5><pre><code>3.1)藏一个数（chs）
+3.2)提示用户猜吧！接受用户输入的一个数（input）
+3.3)对比chs与input，得到对比的结果（result）
+3.3.1）若没猜对，则先提示，在返回第二步
+3.3.2）若猜对了，程序结束</code></pre><h5 id="基本数据类型判断相等用—"><a href="#基本数据类型判断相等用—" class="headerlink" title="基本数据类型判断相等用—  =="></a>基本数据类型判断相等用—  ==</h5><pre><code>   String判断不能用==,只能用equals
+     大小写转换字母
+     Str=str.toUpperCase();转换大写
+     Str=str.toLowerCase();转换小写
+      转换为字符数组:
+char[] input=str.toCharArray();
+      判断字符串内容是否相等:
+            if(str.equals(“Hello”)){
+ }
+   if(str.equals(&quot;EXIT&quot;)){ //判断str的内容是否是EXIT</code></pre><h4 id="练习：-3"><a href="#练习：-3" class="headerlink" title="练习："></a>练习：</h4><h5 id="1：完成猜字符小游戏"><a href="#1：完成猜字符小游戏" class="headerlink" title="1：完成猜字符小游戏"></a>1：完成猜字符小游戏</h5><pre><code>1.1）完成generate（）
+     ------生成随机字符数组
+1.2）完成check（）
+     ------对比随机字符数组与用户输入的字符数组
+1.3）完成main（）
+     ------主流程控制</code></pre><hr>
+<pre><code>最早的计算机-----算数
+现在的计算机-----算数（数字，文字，图片，音频，视频等）
+score，helloWorld，myHelloWorld-------驼峰命名法（变量名使用）
+Score，HelloWorld，MyHelloWorld------帕斯卡命名法（项目/工程名字使用）</code></pre><h5 id="猜字符游戏思路步骤"><a href="#猜字符游戏思路步骤" class="headerlink" title="猜字符游戏思路步骤"></a>猜字符游戏思路步骤</h5><h6 id="1，两分方法"><a href="#1，两分方法" class="headerlink" title="1，两分方法"></a>1，两分方法</h6><pre><code>对比:随机字符数组与用户输入的字符数组
+3int数组声明 对比结果(默认都是0，假设result[1]为字符对个数 result[0]为位置对个数)
+4遍历随机字符数组
+5遍历用户输入的字符数组
+6字符对不对
+7字符对个数增1
+8位置对不对
+9位置对就个数增1
+10剩余input元素不再参与本轮的比较了</code></pre><h6 id="2，生成随机字符数组"><a href="#2，生成随机字符数组" class="headerlink" title="2，生成随机字符数组"></a>2，生成随机字符数组</h6><pre><code>1随机字符数组
+2随机生成letters字符范围A到Z数组
+3开关数组(与letters对应)boolean
+4遍历随机字符数组
+5声明ingex;
+6do...while
+7随机下标元素(0到25)
+8当开关index下标对应的开关为true时，表示该字符已存过，则重新生成index  下标,
+当开关index下标对应的开关为false时，表示该字符未存过，则循环结束
+
+9基于生成下标index到letters中获取字符，并赋值给chs    中的每一个元素
+10将index下标对应的开关修改为true，表示已存过</code></pre><h6 id="主方法设计如下"><a href="#主方法设计如下" class="headerlink" title="主方法设计如下"></a>主方法设计如下</h6><pre><code>1Scanner
+2获取随机字符数组
+3作弊输出
+4声明猜错的次数
+5while自造死循环
+6输出用户看到的”猜吧”
+7String获取用户输入的字符串并转换为大写字母
+8 EXIT退出(输出下次再来并结束)
+9输入toCharArray将字符串转换为字符数组
+10声明对比:随机字符数组与用户输入的字符数组
+11对比对了
+12一个字符100分，猜错一次扣10分
+13输出答对得分
+14猜错的次数增1
+15输出字符对个数和位置数为多少</code></pre><h6 id="代码演示如下"><a href="#代码演示如下" class="headerlink" title="代码演示如下"></a>代码演示如下</h6><pre><code>package day06;
+import java.util.Scanner;
+//猜字符游戏
+public class Guessing {
+    //主方法
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+        char[] chs = generate(); //获取随机字符数组
+        System.out.println(chs); //作弊
+        int count = 0; //猜错的次数
+        while(true){ //自造死循环
+            System.out.println(&quot;猜吧！&quot;);
+            String str = scan.next().toUpperCase(); //获取用户输入的字符串并转换为大写字母
+            if(str.equals(&quot;EXIT&quot;)){
+                System.out.println(&quot;下次再来吧!&quot;);
+                break;
+            }
+            char[] input = str.toCharArray(); //将字符串转换为字符数组
+            int[] result = check(chs,input); //对比:随机字符数组与用户输入的字符数组
+            if(result[0]==chs.length){ //对了
+                int score = 100*chs.length-10*count; //一个字符100分，猜错一次扣10分
+                System.out.println(&quot;恭喜你，猜对了，得分为:&quot;+score);
+                break;
+            }else{ //错
+                count++; //猜错的次数增1
+                System.out.println(&quot;字符对个数为:&quot;+result[1]+&quot;，位置对个数为:&quot;+result[0]);
+            }
+        }
+
+    }
+    //生成随机字符数组
+    public static char[] generate(){
+        char[] chs = new char[5]; //随机字符数组
+        char[] letters = { &apos;A&apos;, &apos;B&apos;, &apos;C&apos;, &apos;D&apos;, &apos;E&apos;, &apos;F&apos;, &apos;G&apos;, &apos;H&apos;, &apos;I&apos;, &apos;J&apos;,
+                &apos;K&apos;, &apos;L&apos;, &apos;M&apos;, &apos;N&apos;, &apos;O&apos;, &apos;P&apos;, &apos;Q&apos;, &apos;R&apos;, &apos;S&apos;, &apos;T&apos;, &apos;U&apos;, &apos;V&apos;,
+                &apos;W&apos;, &apos;X&apos;, &apos;Y&apos;, &apos;Z&apos; }; //随机字符范围数组
+        boolean[] flags = new boolean[letters.length]; //开关数组(与letters对应)
+        for(int i=0;i&lt;chs.length;i++){ //遍历随机字符数组
+            int index;
+            do{
+                index = (int)(Math.random()*letters.length); //随机下标(0到25)
+            }while(flags[index]==true); //当index下标对应的开关为true时，表示该字符已存过，则重新生成index下标
+                                        //当index下标对应的开关为false时，表示该字符未存过，则循环结束
+            chs[i] = letters[index]; //基于下标index到letters中获取字符，并赋值给chs中的每一个元素
+            flags[index] = true; //将index下标对应的开关修改为true，表示已存过
+        }
+        return chs;
+    }
+    //对比:随机字符数组与用户输入的字符数组
+    public static int[] check(char[] chs,char[] input){
+        int[] result = new int[2]; //对比结果(默认都是0，假设result[1]为字符对个数 result[0]为位置对个数)
+        for(int i=0;i&lt;chs.length;i++){ //遍历随机字符数组
+            for(int j=0;j&lt;input.length;j++){ //遍历用户输入的字符数组
+                if(chs[i]==input[j]){ //字符对
+                    result[1]++; //字符对个数增1
+                    if(i==j){ //位置对
+                        result[0]++; //位置对个数增1
+                    }
+                    break; //剩余input元素不再参与本轮的比较了
+                }
+            }
+        }
+        return result;
+    }
+
+}</code></pre><h1 id="2-面向对象-OOP"><a href="#2-面向对象-OOP" class="headerlink" title="2:面向对象(OOP)"></a>2:面向对象(OOP)</h1><h2 id="oop-day01"><a href="#oop-day01" class="headerlink" title="oop.day01"></a>oop.day01</h2><h3 id="1-什么是类？什么是对象？"><a href="#1-什么是类？什么是对象？" class="headerlink" title="1.什么是类？什么是对象？"></a>1.什么是类？什么是对象？</h3><h3 id="2-如何创建类？如何创建对象？如何访问成员？"><a href="#2-如何创建类？如何创建对象？如何访问成员？" class="headerlink" title="2.如何创建类？如何创建对象？如何访问成员？"></a>2.如何创建类？如何创建对象？如何访问成员？</h3><h3 id="3-引用类型之间画等号："><a href="#3-引用类型之间画等号：" class="headerlink" title="3.引用类型之间画等号："></a>3.引用类型之间画等号：</h3><pre><code>3.1）指向同一个对象
+3.2）对其中一个引用的修改会影响另一个引用
+   Eg：房子钥匙（原配钥匙跟配的样板钥匙，房子借人用，主人出差，主人看到的是用了之后         的房子.    两把钥匙都能开门））</code></pre><h3 id="4-基本类型之间画等号："><a href="#4-基本类型之间画等号：" class="headerlink" title="4.基本类型之间画等号："></a>4.基本类型之间画等号：</h3><pre><code>（1）赋值
+（2）对其中一个变量的修改不会影响另一个变量
+     Eg：身份证复印件（身份证原件改了，复印件不变）</code></pre><h3 id="5-null和nullpointerException（空指针异常）"><a href="#5-null和nullpointerException（空指针异常）" class="headerlink" title="5.null和nullpointerException（空指针异常）"></a>5.null和nullpointerException（空指针异常）</h3><pre><code>null：空，没有指向任何对象
+若引用的值为null，则不能再进行任何操作了
+若操作则nullpointerException（就会报空指针异常）
+基本类型不能赋值为空null;只有引用类型可以赋值为空(因为引用类型本身默认为null)</code></pre><h3 id="面向对象：因抽象而难"><a href="#面向对象：因抽象而难" class="headerlink" title="面向对象：因抽象而难"></a>面向对象：因抽象而难</h3><pre><code>（1）画一个图形
+（2）向着社会主义社会发展
+（3）射击游戏    </code></pre><h3 id="面向过程结构化的设计弊端："><a href="#面向过程结构化的设计弊端：" class="headerlink" title="面向过程结构化的设计弊端："></a>面向过程结构化的设计弊端：</h3><pre><code>（1）缺乏对数据的封装
+（2）数据与方法（操作数据）的分离     </code></pre><h3 id="基本数据"><a href="#基本数据" class="headerlink" title="基本数据"></a>基本数据</h3><pre><code>基本数据类型----不能装多个
+数组------------必须相同数据类型
+自己造个数据类型--- ---</code></pre><h3 id="俄罗斯方块"><a href="#俄罗斯方块" class="headerlink" title="俄罗斯方块"></a>俄罗斯方块</h3><pre><code>（1）找对象：很多很多的小格子
+（2）抽类：格子类Cell
+（3）设计类的成员变量和方法
+（4）创建对象并测试：
+
+Class Cell{//格子类
+颜色、宽、高、形状、行号、列号
+ int row(行);
+ int col(列);
+ Void drop（）{//下落一格
+ row++；
+}
+ void moveLeft（int n）{//左移n格
+ col-=n；
+}
+ void moveRight（int n）{//右移n格
+ col+=n；
+}
+     String getCellInfo（）{//获取行号和列号
+ return row+”,”+col;
+}
+}</code></pre><h3 id="举例：-创建学生类"><a href="#举例：-创建学生类" class="headerlink" title="举例： 创建学生类"></a>举例： 创建学生类</h3><pre><code>Student       zs        =      new Student（）;
+   数据类型变量  引用变量    指向      对象
+
+写在main里面的叫局部变量    局部变量是存在栈中的
+写在main外面并也是方法外面的叫成员变量   成员变量是存在堆中的</code></pre><h3 id="练习：-4"><a href="#练习：-4" class="headerlink" title="练习："></a>练习：</h3><pre><code>1.完成RefNullDemo
+-----练习引用之间等号及null
+2.完成Emp与EmpTest类：经典案例1
+3.完成Cell类，包含：----oo.day01一次，oo.day02一次
+（1）成员变量：row，col
+（2）方法：drop（），moveLeft（），getCellInfo（）
+（3）完成CellTest类，包含：
+（3.3）main（）--调用printWall（）测试
+（3.4）printWall（Cell c）---实现打墙+打格</code></pre><h2 id="oop-day02"><a href="#oop-day02" class="headerlink" title="oop.day02"></a>oop.day02</h2><h3 id="参数："><a href="#参数：" class="headerlink" title="参数："></a>参数：</h3><pre><code>数据无参也是说写死了</code></pre><h3 id="方法-1"><a href="#方法-1" class="headerlink" title="方法"></a>方法</h3><h4 id="1-方法的签名：方法名-参数列表"><a href="#1-方法的签名：方法名-参数列表" class="headerlink" title="1.方法的签名：方法名+参数列表"></a>1.方法的签名：方法名+参数列表</h4><h4 id="2-方法的重载-Overload-："><a href="#2-方法的重载-Overload-：" class="headerlink" title="2.方法的重载(Overload)："></a>2.方法的重载(Overload)：</h4><pre><code>2.1)发生在同一个类中，方法名称相同，参数列表不同
+2.2)编译器在编译时会自动根据签名自动绑定调用的方法</code></pre><h4 id="3-构造方法：构造函数-构造器-构建器"><a href="#3-构造方法：构造函数-构造器-构建器" class="headerlink" title="3.构造方法：构造函数/构造器/构建器"></a>3.构造方法：构造函数/构造器/构建器</h4><pre><code>  -------给成员变量赋值(构造方法的五要素)
+3.1)常常给成员变量赋值
+3.2)与类同名，没有返回值类型（没有void）
+3.3)在创建对象时被自动调用
+3.4)若自己不写构造方法，则编译器默认一个无参构造方法
+            若自己写了构造方法，则不再默认提供
+3.5)构造方法可以重载
+构造方法是给成员变量初始化的</code></pre><h4 id="4-This：代词-指代当前对象，哪个对象调方法指的就是哪个对象"><a href="#4-This：代词-指代当前对象，哪个对象调方法指的就是哪个对象" class="headerlink" title="4.This：代词 指代当前对象，哪个对象调方法指的就是哪个对象"></a>4.This：代词 指代当前对象，哪个对象调方法指的就是哪个对象</h4><pre><code>    只能用在方法体中，方法中访问成员变量之前默认有个this.
+this的用法：
+（1）this.成员变量名--------访问成员变量
+（2）this.方法名（）--------调用方法（不常用）
+（3）this（）---------------调用构造方法</code></pre><h4 id="5-引用类型数组："><a href="#5-引用类型数组：" class="headerlink" title="5.引用类型数组："></a>5.引用类型数组：</h4><pre><code>1)Cell[] cells = new Cell[4];//创建格子数组对象
+    cells[0] = new Cell(2,5);//创建格子对象
+    cells[1] = new Cell(2,6);
+    cells[2] = new Cell(2,7);
+    cells[3] = new Cell(3,6);
+2)Cell[] cells = new Cell[]{
+      new Cell(2,5),
+      new Cell(2,6),
+      new Cell(2,7),
+      new Cell(3,6)
+    };
+3)int[][] arr = new int[3][];//数组的数组
+    arr[0] = new int[2];
+    arr[1] = new int[3];
+    arr[2] = new int[2];
+    arr[1][0] = 100; //给arr中第2个元素中的第1个元素赋值为100
+4)int[][] arr = new int[3][4]; //3行4列
+    for(int i=0;i&lt;arr.length;i++){
+      for(int j=0;j&lt;arr[i].length;j++){
+        arr[i][j] = 100;
+      }
+    }
+//声明Student数组stus，包含26个元素
+//每个元素都是Student型，默认值为null
+   Student[] stus = new Student[26];</code></pre><h3 id="任务："><a href="#任务：" class="headerlink" title="任务："></a>任务：</h3><h4 id="1）完成Cell类的的三个构造方法，并测试"><a href="#1）完成Cell类的的三个构造方法，并测试" class="headerlink" title="1）完成Cell类的的三个构造方法，并测试"></a>1）完成Cell类的的三个构造方法，并测试</h4><h4 id="2）创建包oo-day03-包含："><a href="#2）创建包oo-day03-包含：" class="headerlink" title="2）创建包oo.day03,包含："></a>2）创建包oo.day03,包含：</h4><pre><code>   2.1）Cell类，包含：
+   2.1.1）成员变量：row，col
+   2.1.2）构造方法：Cell（），
+                  Cell（int n），
+             Cell（int row，int col）
+   2.1.3）方法：drop（），drop（int n）
+moveLeft（），moveLeft（int n）
+getCellInfo（）</code></pre><h4 id="2-2）CellTest类：测试重载与构造"><a href="#2-2）CellTest类：测试重载与构造" class="headerlink" title="2.2）CellTest类：测试重载与构造"></a>2.2）CellTest类：测试重载与构造</h4><h4 id="3-完成每周一做的两个编码题"><a href="#3-完成每周一做的两个编码题" class="headerlink" title="3.完成每周一做的两个编码题"></a>3.完成每周一做的两个编码题</h4><h2 id="oop-day03"><a href="#oop-day03" class="headerlink" title="oop.day03"></a>oop.day03</h2><h3 id="1-内存管理-由JVM来管理———了解"><a href="#1-内存管理-由JVM来管理———了解" class="headerlink" title="1.内存管理:由JVM来管理———了解"></a>1.内存管理:由JVM来管理———了解</h3><h4 id="1-堆"><a href="#1-堆" class="headerlink" title="1)堆:"></a>1)堆:</h4><pre><code>1.1)存储所有new出来的对象(包括成员变量)
+1.2)垃圾:没有任何引用指向的对象
+    垃圾回收器(GC)不定时去堆中回收垃圾，
+    回收过程是透明的，并不一定是发现垃圾就立即回收
+    通过调用System.gc()可以建议虚拟机尽快调度GC来回收
+1.3)内存泄漏:不再使用的内存还没有被及时的回收
+    建议:对象不再使用时，及时将引用设置为null
+1.4)成员变量的生命周期:
+      创建对象时存在堆中，对象被回收时一并被回收</code></pre><h4 id="2-栈"><a href="#2-栈" class="headerlink" title="2)栈:"></a>2)栈:</h4><pre><code>  2.1)存储正在调用的方法中的所有局部变量(包括参数)
+  2.2)调用方法时会在栈中为该方法分配一块对应的栈帧，
+      栈帧中包含方法中的所有的局部变量(包括参数)，
+      方法执行完，则栈帧被清除，局部变量一并失效
+  2.3)局部变量的生命周期:
+        调用方法时存在栈中，方法执行结束后与栈帧一并被清除
+3)方法区:
+  3.1)存储.class字节码文件(包括方法)
+  3.2)方法只有一份，通过this来区分具体的调用对象</code></pre><h3 id="2-继承："><a href="#2-继承：" class="headerlink" title="2.继承："></a>2.继承：</h3><pre><code>1)作用：实现代码的复用，避免代码的重复
+2)通过extends来实现继承
+3)父类：所有子类所共有的属性和行为
+      子类：子类所特有的属性和行为
+4）子类继承父类以后。子类具有：父类的+子类的
+5）一个父类可以有多个子类
+一个子类只能继承一个父亲----单一继承
+6）继承具有传递性
+7）Java规定：构造子类之前必须先构造父类
+8）在子类中不需要点直接访问
+若子类不调父类构造，则编译器默认在子类构造的第一句通过super（）来调    用父类的无参构造
+若子类自己调了父类的构造，则不再默认提供
+继承要符合 is  a 的关系才能继承
+问:子类可以继承父类的构造方法吗?
+答:不能
+extends----&gt;继承的意思</code></pre><h3 id="3-Super：指代当前对象的父类对象"><a href="#3-Super：指代当前对象的父类对象" class="headerlink" title="3.Super：指代当前对象的父类对象"></a>3.Super：指代当前对象的父类对象</h3><pre><code>Super（）调父类构造必须位于子类构造的第一行
+Super的用法：
+Super.成员变量名----访问父类的成员变量
+Super.方法名（）--------调用父类的方法
+Super（）---------------调用父类的构造方法</code></pre><h4 id="代码演示"><a href="#代码演示" class="headerlink" title="代码演示"></a>代码演示</h4><pre><code>package oo.day03;
+//super的演示
+public class SuperDemo {
+    public static void main(String[] args) {
+        Boo o = new Boo();
+    }
+}
+
+class Coo{
+    Coo(int a){
+    }
+}
+class Doo extends Coo{
+    Doo(){
+        super(5); //调用父类的有参构造
+    }    
+    /*
+    //如下代码，写不写都有----默认的
+    Doo(){
+        super();
+    }
+    */
+}
+class Aoo{
+    Aoo(){
+        System.out.println(&quot;父类构造&quot;);
+    }
+}
+class Boo extends Aoo{
+    Boo(){
+        System.out.println(&quot;子类构造&quot;);
+    }
+}</code></pre><h3 id="4-向上造型："><a href="#4-向上造型：" class="headerlink" title="4.向上造型："></a>4.向上造型：</h3><pre><code>1）父类型的引用指向子类的对象
+2）能点出来什么，看引用的类型
+3）一个子类的对象可以向上造型为父类的类型
+4）父类不能访问子类
+5）子类可以访问父类</code></pre><h4 id="代码演示-1"><a href="#代码演示-1" class="headerlink" title="代码演示"></a>代码演示</h4><pre><code>package oo.day03;
+//向上造型的演示
+public class UpDemo {
+    public static void main(String[] args) {
+        Eoo a=new Eoo();
+        a.e=100;
+        a.show();
+        //a.test();//编译错误,父不能访问子的
+
+        Foo b=new Foo();
+        b.f=100;
+        b.test();
+        b.e=2; //正确子类可以访问父类
+        b.show();
+
+        Eoo c=new Foo();
+        c.e=100;
+        c.show();
+        //c.f=100;//编译错误.能点出来什么,看引用类型
+  }
+}
+class Eoo{
+    int e;
+    void show(){}
+}
+class Foo extends Eoo{
+    int f;
+    void test(){}
+}</code></pre><h5 id="练习-————-每人两次-oo-day04包中"><a href="#练习-————-每人两次-oo-day04包中" class="headerlink" title="练习:————-每人两次(oo.day04包中)"></a>练习:————-每人两次(oo.day04包中)</h5><pre><code>1)Cell类，包含:
+  1.1)成员变量: row,col
+  1.2)构造方法: Cell(int row,int col)
+  1.3)方法:String getCellInfo()
+2)Tetromino类，包含:
+  2.1)成员变量: Cell[] cells
+  2.2)构造方法: Tetromino()
+  2.3)方法:drop(),moveLeft(),moveRight(),print()
+3)T类，继承Tetromino，包含:
+  3.1)构造方法:T(),T(int row,int col)
+4)J类，继承Tetromino，包含:
+  4.1)构造方法:J(),J(int row,int col)
+5)TJTest类，包含:
+  5.1)main()方法:调用printWall()并测试
+  5.2)printWall(Tetromino o):打墙+打图形 </code></pre><h2 id="oop-day04"><a href="#oop-day04" class="headerlink" title="oop.day04"></a>oop.day04</h2><h3 id="1-方法的重写："><a href="#1-方法的重写：" class="headerlink" title="1.方法的重写："></a>1.方法的重写：</h3><h4 id="1）发生在父子类中，方法名形成相同，参数列表相同，方法体不同"><a href="#1）发生在父子类中，方法名形成相同，参数列表相同，方法体不同" class="headerlink" title="1）发生在父子类中，方法名形成相同，参数列表相同，方法体不同"></a>1）发生在父子类中，方法名形成相同，参数列表相同，方法体不同</h4><h4 id="2）重写方法被调用时，看对象的类型"><a href="#2）重写方法被调用时，看对象的类型" class="headerlink" title="2）重写方法被调用时，看对象的类型"></a>2）重写方法被调用时，看对象的类型</h4><h4 id="3）重写必须加public"><a href="#3）重写必须加public" class="headerlink" title="3）重写必须加public"></a>3）重写必须加public</h4><h5 id="代码演示："><a href="#代码演示：" class="headerlink" title="代码演示："></a>代码演示：</h5><p>  //父类大，子类小<br>      class Aoo{<br>          void show(){}<br>          double test(){return 0.0;}<br>          Boo sayHi(){return null;}<br>          public Aoo say(){return null;}<br>      }<br>      class Boo extends Aoo{<br>          //int show(){return 1;} //编译错误，void时必须相同<br>          //int test(){return 0;} //编译错误，基本类型时必须相同<br>          //Aoo sayHi(){return null;} //编译错误，引用类型必须小于或等于<br>          public Boo say(){return null;}<br>      }</p>
+<h3 id="重写遵循”两同两小一大”原则"><a href="#重写遵循”两同两小一大”原则" class="headerlink" title="重写遵循”两同两小一大”原则:"></a>重写遵循”两同两小一大”原则:</h3><pre><code>* 1)两同:
+*   1.1)方法名相同
+*   1.2)参数列表相同
+* 2)两小:
+*   2.1)子类方法的返回值类型要小于或等于父类的
+*       2.1.1)void时，必须相同
+*       2.1.2)基本数据类型时，必须相同
+*       2.1.3)引用类型时，小于或等于 
+*   2.2)子类方法抛出的异常要小于或等于父类的----异常之后
+* 3)一大:
+*   3.1)子类方法的访问权限要大于或等于父类的---访问控制修饰符之后</code></pre><h3 id="2-重写与重载的区别：—-常见面试题"><a href="#2-重写与重载的区别：—-常见面试题" class="headerlink" title="2.重写与重载的区别：—-常见面试题"></a>2.重写与重载的区别：—-常见面试题</h3><h4 id="1）重写（Override）"><a href="#1）重写（Override）" class="headerlink" title="1）重写（Override）"></a>1）重写（Override）</h4><pre><code>1.1）发生在父子类中，方法名相同，参数列表相同，方法体不同
+1.2）重写遵循“运行期”绑定，看对象的类型来调用方法</code></pre><h4 id="2）重载（Overload）"><a href="#2）重载（Overload）" class="headerlink" title="2）重载（Overload）"></a>2）重载（Overload）</h4><pre><code>2.1）发生在一个类中，方法名相同，参数列表不同，方法体不同
+2.2）重载遵循“编译器”绑定，看引用的类型来绑定方法</code></pre><h5 id="代码演示-2"><a href="#代码演示-2" class="headerlink" title="代码演示"></a>代码演示</h5><pre><code>package oo.day04;
+//重写与重载的区别的演示
+public class OverrideOverloadDemo {
+    public static void main(String[] args) {
+        Eoo eoo=new Eoo();
+          Aoo o=new Boo();//向上造型
+          eoo.test(o);//重载看参数/引用类型        
+    }    
+}
+class Eoo{
+    void test(Aoo o){
+        System.out.println(&quot;父型参数&quot;);
+        o.show();//重写看对象
+    }
+    void test(Boo o){
+        System.out.println(&quot;子类&quot;);
+    }
+}
+class Aoo{
+    void show(){
+        System.out.println(&quot;父类&quot;);
+    }    
+}
+class Boo extends Aoo{
+    void show(){
+        System.out.println(&quot;子类&quot;);
+    }
+}
+
+重写看对象，重载看引用(参数)</code></pre><h3 id="封装的意义"><a href="#封装的意义" class="headerlink" title="封装的意义:"></a>封装的意义:</h3><pre><code>对外提供可调用的,稳定的功能;
+封装容易变化的,具体的实施细节,外界不可访问,这样的意义在于:
+降低代码出错的可能性,便于维护
+当内部的实现细节改变时,只要保证对外的功能定义不变,    其他的模块就不会因此而受到牵连</code></pre><h3 id="3-Package"><a href="#3-Package" class="headerlink" title="3.Package"></a>3.Package</h3><pre><code>1）避免类名冲突       
+2）报名可以有层次结构，通报中得了类是不能同名的
+3）类的完全限定名：包名.类名
+4）建议：包名所有字母都小写
+5）同一个包里面不能同名</code></pre><h3 id="import："><a href="#import：" class="headerlink" title="import："></a>import：</h3><pre><code>1）同包中的类可以直接访问，不同包中的只能两种访问方式：
+1.1）先import声明类，再访问类-----建议
+1.2）类的完全限定名----太繁琐，不建议</code></pre><h3 id="4-访问控制修饰符："><a href="#4-访问控制修饰符：" class="headerlink" title="4.访问控制修饰符："></a>4.访问控制修饰符：</h3><pre><code>1）public：公开的，任何类都可以访问(公开化)
+2）private：私有的，本类访问
+3）protected：受保护的，可以本类，也可以子类或者同包类访问
+4）默认的：什么也不写，可以本类用，可以同包类用
+5）类的访问修饰：public和默认的
+       类的成员的访问修饰：如上四种都可以
+  用那个类就引那个类--这样效率高</code></pre><h4 id="代码演示-3"><a href="#代码演示-3" class="headerlink" title="代码演示"></a>代码演示</h4><pre><code>package oo.day04;
+public class Foo {
+    public int a; //任何类都可以访问
+    protected int b;//本类,子类,同包类
+    int c;            //本类,同包类
+    private int d;    //本类
+
+    void show(){
+        a=1; b=2; c=3; d=4;
+    }
+}
+class Goo{
+    void show(){
+        Foo o=new Foo();
+        o.a=1;  o.b=2;  o.c=3;
+        //o.d=4;  私有的只能本类访问
+    }
+}</code></pre><h3 id="5-Static：静态的"><a href="#5-Static：静态的" class="headerlink" title="5.Static：静态的"></a>5.Static：静态的</h3><h4 id="1）静态变量："><a href="#1）静态变量：" class="headerlink" title="1）静态变量："></a>1）静态变量：</h4><pre><code>1.1）由static修饰的
+1.2）属于类，存在方法区中，只有一份
+1.3）常常通过类名.来访问
+1.4）何时用：所有对象共享的数据（图片，音频，视频）</code></pre><h4 id="2）静态方法："><a href="#2）静态方法：" class="headerlink" title="2）静态方法："></a>2）静态方法：</h4><pre><code>2.1）由static修饰
+2.2）属于类，存在方法区中，只有一份
+2.3）常常通过类名点.来访问
+2.4）静态方法没有隐式的this传递，没有this意味着没有对象，实例对象需要对象点来访问，所以静态方法中不能直接访问实例对象
+2.5）何时用：方法的操作仅与参数相关而与对象无关</code></pre><h4 id="3）静态块：属于类的代块"><a href="#3）静态块：属于类的代块" class="headerlink" title="3）静态块：属于类的代块"></a>3）静态块：属于类的代块</h4><pre><code>3.1）由static修饰
+3.2）类被加载期间自动执行，因类只被加载一次，所以静态块也只走一次
+3.3）何时用：常常用于初始化静态资源（图片，音频，视频等）</code></pre><h5 id="代码演示-4"><a href="#代码演示-4" class="headerlink" title="代码演示"></a>代码演示</h5><pre><code>package oo.day04;
+//static的演示
+public class StaticDemo {
+    public static void main(String[] args) {
+        Joo o1 = new Joo();
+        o1.show();
+        Joo o2 = new Joo();
+        o2.show();
+        System.out.println(Joo.b); //建议类名点来访问静态变量
+        System.out.println(o1.b); //不建议    
+        Koo.test(); //通过类名点来访问    
+        Loo o3 = new Loo();
+        Loo o4 = new Loo();        
+    }
+}
+class Loo{ ///演示静态块
+    static{
+        System.out.println(&quot;静态块&quot;);
+    }
+    Loo(){
+        System.out.println(&quot;构造方法&quot;);
+    }
+}
+class Koo{ //演示静态方法
+    int a;
+    static int b;
+    void show(){ //有隐式this
+        System.out.println(this.a);
+        System.out.println(Koo.b);
+    }
+    static void test(){ //没有隐式this
+        //没有this意味着没有对象，
+        //而实例成员必须通过对象来访问
+        //所以静态方法中不能直接访问实例成员
+        //System.out.println(a); //编译错误
+        System.out.println(Koo.b);
+    }
+}
+class Joo{ //演示静态变量
+    int a; //实例变量
+    static int b; //静态变量
+    Joo(){
+        a++;
+        b++;
+    }
+    void show(){
+        System.out.println(&quot;a=&quot;+a);
+        System.out.println(&quot;b=&quot;+b);
+    }
+}
+  凡是要new对象猜能访问的都是静态方法</code></pre><h3 id="6-Final：最终的"><a href="#6-Final：最终的" class="headerlink" title="6.Final：最终的"></a>6.Final：最终的</h3><pre><code>1)修饰变量:变量不能被修改 改变
+2)修饰方法:方法不能被重写
+3)修饰类:类不能被继承</code></pre><h4 id="Final修饰成员变量-只有两种初始化方式"><a href="#Final修饰成员变量-只有两种初始化方式" class="headerlink" title="Final修饰成员变量:只有两种初始化方式:"></a>Final修饰成员变量:只有两种初始化方式:</h4><pre><code>1)声明同时初始化
+2)在构造方法中初始化
+Final修饰几部变量,用之前初始化即可</code></pre><h5 id="代码演示-5"><a href="#代码演示-5" class="headerlink" title="代码演示"></a>代码演示</h5><pre><code>    package oo.day04;
+//final的演示
+public class FinalDemo {
+    public static void main(String[] args) {        
+    }
+}
+final class Poo{}
+//class Qoo extends Poo{} //编译错误，final的类不能被继承
+
+class Roo{}
+final class Soo extends Roo{}
+
+//演示final修饰方法
+class Noo{ 
+    final void show(){}
+    void say(){}
+}
+class Ooo extends Noo{
+    //void show(){} //编译错误，final的方法不能被重写
+    void say(){}
+}
+class Moo{ //演示final修饰变量
+    final int a = 5;
+    final int b;
+    Moo(){
+        b = 6;
+    }
+    void show(){
+        final int c;
+        //a = 55; //编译错误，final的变量不能被改变
+    }
+}</code></pre><h4 id="成员变量：（类的里边，方法外边-有两种变量）"><a href="#成员变量：（类的里边，方法外边-有两种变量）" class="headerlink" title="成员变量：（类的里边，方法外边.有两种变量）"></a>成员变量：（类的里边，方法外边.有两种变量）</h4><pre><code>A.实例变量：没有static修饰，属于对象的，存在堆中
+               有几个对象就有几份
+                       常常通过对象点来访问
+B.静态变量：由static修饰，属于类的，存在方法区中
+                只有一份
+                常常通过类名点访问</code></pre><h4 id="成员变量："><a href="#成员变量：" class="headerlink" title="成员变量："></a>成员变量：</h4><pre><code>（1）类中，方法外
+（2）有默认值
+（3）创建对象时存在堆中，对象被回收时一并消失</code></pre><h4 id="局部变量："><a href="#局部变量：" class="headerlink" title="局部变量："></a>局部变量：</h4><pre><code>（1）方法中
+（2）没有默认值
+（3）调用方法时存在栈中，方法执行完以后与栈帧一并失效
+
+数据私有化，行为公开化</code></pre><h5 id="练习：-5"><a href="#练习：-5" class="headerlink" title="练习："></a>练习：</h5><pre><code>1.练习overrideDemo重写
+2.练习Override与Overload的区别
+3.练习staticDemo静态
+4.自学final和static final常量</code></pre><h2 id="oop-day05："><a href="#oop-day05：" class="headerlink" title="oop.day05："></a>oop.day05：</h2><h3 id="1-Static-final常量：应用率高"><a href="#1-Static-final常量：应用率高" class="headerlink" title="1.Static final常量：应用率高"></a>1.Static final常量：应用率高</h3><h4 id="1）常量必须声明同时初始化"><a href="#1）常量必须声明同时初始化" class="headerlink" title="1）常量必须声明同时初始化"></a>1）常量必须声明同时初始化</h4><h4 id="2）通过类名点来访问，不可被改变"><a href="#2）通过类名点来访问，不可被改变" class="headerlink" title="2）通过类名点来访问，不可被改变"></a>2）通过类名点来访问，不可被改变</h4><h4 id="3）建议：常量名所有字母都大写，多个单词用-分隔"><a href="#3）建议：常量名所有字母都大写，多个单词用-分隔" class="headerlink" title="3）建议：常量名所有字母都大写，多个单词用_分隔"></a>3）建议：常量名所有字母都大写，多个单词用_分隔</h4><h4 id="4）编译器在编译时会把常量直接替换为具体的值，效率高"><a href="#4）编译器在编译时会把常量直接替换为具体的值，效率高" class="headerlink" title="4）编译器在编译时会把常量直接替换为具体的值，效率高"></a>4）编译器在编译时会把常量直接替换为具体的值，效率高</h4><pre><code>package oo.day05;
+//static final常量的演示
+public class StaticFinalDemo {
+    public static void main(String[] args) {
+        System.out.println(Aoo.PI); //通过类名来访问
+        //Aoo.PI = 3.1415926; //编译错误，常量不能被改变
+
+        //1)加载Boo.class到方法区中
+        //2)静态变量count存储到方法区中
+        //3)到方法区中获取count并输出
+        System.out.println(Boo.count);
+
+        //编译器在编译时常量被直接替换为具体的值，效率高
+        //相当于System.out.println(5);
+        System.out.println(Boo.NUM);
+    }
+}
+class Boo{
+    public static int count = 5;     //静态变量
+    public static final int NUM = 5; //常量
+}
+class Aoo{
+    public static final double PI = 3.14159;
+    //public static final int NUM; //编译错误，常量必须声明同时初始化
+}</code></pre><h3 id="2-抽象方法"><a href="#2-抽象方法" class="headerlink" title="2.抽象方法:"></a>2.抽象方法:</h3><pre><code>1)由abstract修饰
+2)只有方法的定义，没有方法的具体实现(连{}都没有)</code></pre><h3 id="2-抽象类："><a href="#2-抽象类：" class="headerlink" title="2.抽象类："></a>2.抽象类：</h3><pre><code>1）由abstract修饰，
+2）包含抽象方法的类必须是抽象类
+       不包含抽象方法的类也可以声明为抽象类------我乐意
+3）抽象类依然不能被实例化
+4）抽象类是需要被继承的，子类：
+  4.1）重写所有抽象方法---常用
+  4.2）也声明为抽象类-----不常用
+5）抽象类的意义：
+ 5.1）封装子类共有的属性和行为-------代码复用
+ 5.2）为所有子类提供一种统一的类型---向上造型
+ 5.3）可以包含抽象方法，为所有子类提供了统一的入口所有子类的实现不同，但入口一致的</code></pre><h3 id="3-接口："><a href="#3-接口：" class="headerlink" title="3.接口："></a>3.接口：</h3><pre><code>1）是一个标准、规范--------制定方
+      遵守了这个标准就能干某件事-------API
+2）是一种数据类型（引用类型）
+3）由interface来定义
+      只能包含常量和抽象方法
+4）接口不能被实例化
+5）接口是需要被实现的。实现类/子类：
+      必须重写接口中的所有抽象方法
+6）一个类可以实现多个接口，用逗号分隔
+      若又继承又实现时，应先继承后实现
+7）接口可以继承接口</code></pre><h4 id="代码演示-6"><a href="#代码演示-6" class="headerlink" title="** 代码演示**"></a>** 代码演示**</h4><pre><code>package lianxioo.day04;
+//接口的演示
+public class InterfaceDemo {
+    public static void main(String[] args) {
+        //Inter6 o1 = new Inter6(); //编译错误，接口不能被实例化
+        Inter6 o2 = new Foo(); //向上造型
+        Inter5 o3 = new Foo(); //向上造型
+    }
+}
+//演示接口继承接口
+interface Inter5{
+    void show();
+}
+interface Inter6 extends Inter5{
+    void say();
+}
+class Foo implements Inter6{
+    public void say(){}
+    public void show(){}
+}
+
+//演示又继承又实现，接口的多实现
+interface Inter3{
+    void show();
+}
+interface Inter4{
+    void say();
+}
+abstract class Doo{
+    abstract void test();
+}
+class Eoo extends Doo implements Inter3,Inter4{
+    public void show(){}
+    public void say(){}
+    void test(){}
+}
+//演示接口的实现
+interface Inter2{
+    void show();
+    void say();
+}
+class Coo implements Inter2{
+    public void show(){}
+    public void say(){}
+}
+//演示接口的语法
+interface Inter1{
+    public static final int NUM = 5;
+    public abstract void show();
+    int COUNT = 5; //默认public static final
+    void say(); //默认public abstract    
+    //int NUMBER; //编译错误，常量必须声明同时初始化
+    //void test(){} //编译错误，抽象方法不能有方法体
+}</code></pre><h4 id="类、接口、继承使用笔记"><a href="#类、接口、继承使用笔记" class="headerlink" title="类、接口、继承使用笔记"></a>类、接口、继承使用笔记</h4><pre><code>类跟类------------- extends继承
+接口跟接口--------- extends继承
+类跟接口----------- implement实现</code></pre><h4 id="接口和抽象类"><a href="#接口和抽象类" class="headerlink" title="接口和抽象类"></a>接口和抽象类</h4><pre><code>A. 抽象类和接口都不能实例化。
+B. 接口里只能包含抽象方法，抽象类则可以包含普通方法。
+C. 接口里不包含构造器，抽象类里可以包含构造器。
+D. 一个类只能实现一个接口</code></pre><h5 id="练习：-6"><a href="#练习：-6" class="headerlink" title="练习："></a>练习：</h5><pre><code>1.完成UnionPayTest银行卡系统
+2.创建oo.day06包，重写完成UnionPayTest银行卡系统
+3.完成ShapeTest求图形最大面积
+4.自学（抽象类与接口的区别）</code></pre><h4 id="设计规则："><a href="#设计规则：" class="headerlink" title="设计规则："></a>设计规则：</h4><pre><code>1.将所有子类共有的属性和行为，抽象到父类中
+2.所有子类行为都一样------设计为普通方法
+  所有子类行为不一样------设计为抽象方法
+3.部分子类共有的行为，抽象到接口中
+4.符合既是也是原则时，使用接口
+5.接口是对继承的单根性的扩展------为了可以多继承,继承多个父类</code></pre><h2 id="oop-day06"><a href="#oop-day06" class="headerlink" title="oop.day06"></a>oop.day06</h2><h3 id="1-多态："><a href="#1-多态：" class="headerlink" title="1.多态："></a>1.多态：</h3><h4 id="1）多态的意义："><a href="#1）多态的意义：" class="headerlink" title="1）多态的意义："></a>1）多态的意义：</h4><pre><code>1.1）同一类型的引用在指向不同的对象时，有不同的实现
+         行为的多态：cut（）、run（）、study（）......
+1.2）同一个对象被造型为不同的类型时，有不同的功能
+         对象的多态：我、水......</code></pre><h4 id="2）向上造型（自动类型转换）："><a href="#2）向上造型（自动类型转换）：" class="headerlink" title="2）向上造型（自动类型转换）："></a>2）向上造型（自动类型转换）：</h4><pre><code>2.1）父类型的引用指向子类的对象
+2.2）能造型成为的类型为：父类、所实现的接口
+2.3）能点出来什么，看引用的类型</code></pre><h4 id="3）强制类型转换-有可能报错-，成功的条件有两点："><a href="#3）强制类型转换-有可能报错-，成功的条件有两点：" class="headerlink" title="3）强制类型转换(有可能报错)，成功的条件有两点："></a>3）强制类型转换(有可能报错)，成功的条件有两点：</h4><pre><code>3.1）引用所指向的对象，就是该类型
+3.2）引用所指向的对象，实现了该接口</code></pre><h4 id="4）强转时若不符合以上两个条件，能发生ClassCastExcetion类型转换异常"><a href="#4）强转时若不符合以上两个条件，能发生ClassCastExcetion类型转换异常" class="headerlink" title="4）强转时若不符合以上两个条件，能发生ClassCastExcetion类型转换异常"></a>4）强转时若不符合以上两个条件，能发生ClassCastExcetion类型转换异常</h4><pre><code>   在强转之前先通过instanceof判断引用指向的对象
+package oo.day06;
+//多态的演示
+public class MultiTypeDemo {
+
+    public static void main(String[] args) {
+        Aoo o1=new Boo();//向上造型
+        Boo o2=(Boo)o1;//o1 指向的对象,实现了inter1接口 子类强转对象(Boo)o1;
+        inter1 o3=(inter1)o1;//o1指向的对象就是该类型的
+      //Coo o4=(Coo)o1;  ClassCastException 异常没有符合多态向上造型的两个条件,虽然不报错但是运行会出现异常
+        if(o1 instanceof Coo){ //判断false
+            Coo o5=(Coo)o1;
+        }
+        System.out.println(&quot;能输出就是对的&quot;);
+    }
+}
+interface inter1{    }
+class Aoo{    }
+class Boo extends Aoo implements inter1{    }
+class Coo extends Aoo{    }</code></pre><h3 id="2-成员内部类"><a href="#2-成员内部类" class="headerlink" title="2.成员内部类"></a>2.成员内部类</h3><pre><code>**应用率比较低**
+1）类中套类，外面的称为Outer外部类，里面的称为Inner内部类
+2）内部类通常只服务于外部类，对外不具备可见性
+3）内部类通常只在外部类中创建
+4）内部类中可以访问外部类的成员（包括私有的）
+5）内部类中有个隐式的引用指向了创建它的外部类对象
+   语法：外部类名.this.</code></pre><h4 id="代码演示-7"><a href="#代码演示-7" class="headerlink" title="代码演示"></a>代码演示</h4><pre><code>package oo.day06;
+
+public class InnerClassDemo {
+    public static void main(String[] args) {
+        Mama m=new Mama();
+        //Baby b=new Baby; 内部类对外不具备可见性
+    }
+}
+class Mama{
+    private String name;//私有的名字
+    Baby createBaby(){
+        return new Baby();
+
+    }
+    class Baby{
+        void showMamaName(){
+            System.out.println(name);
+            System.out.println(Mama.this.name);//输出全写
+            //System.out.println(this.name); 不能这么输出写
+        }
+    }
+}</code></pre><h3 id="3-匿名内部类："><a href="#3-匿名内部类：" class="headerlink" title="3.匿名内部类："></a>3.匿名内部类：</h3><pre><code>** 应用率比较高(内部类有独立的.class字节码文件)**
+1）若想创建一个类的对象，并且对象只被创建一次，此时该类不必命名，称        之为    匿名内部类对象
+2）匿名内部类想访问外部的变量，该变量必须是final的</code></pre><h4 id="演示内部类"><a href="#演示内部类" class="headerlink" title="演示内部类"></a>演示内部类</h4><pre><code>  package oo.day06;
+ public class NstInnerClassDemo {
+
+    public static void main(String[] args) {
+        /**1.创建了Inter2的一个子类,但是没有名字
+         * 2.创建了该子类的对象,名为o1
+         * 3.大括号中的为子类的类体
+         */
+        Inter2 o1=new Inter2(){
+
+        };
+        /**1.创建了Inter2的一个子类,但是没有名字
+         * 2.创建了该子类的对象,名为o2
+         * 3.大括号中的为子类的类体
+         */
+        Inter2 o2=new Inter2(){
+
+        };
+        /**1.创建了Inter3的一个子类,但是没有名字
+         * 2.创建了该子类的对象,名为o3
+         * 3.大括号中的为子类的类体
+         */
+final int num=5;
+        Inter3 o3=new Inter3(){
+            public void show(){//Inter3 重写后就不报错了
+                System.out.println(&quot;showshow&quot;);
+System.out.println(num);
+            }
+        };
+        o3.show();
+    }
+
+}
+interface Inter2{
+
+}
+interface Inter3{
+    void show();
+}</code></pre><h5 id="问-内部类有主见独立的-class吗"><a href="#问-内部类有主见独立的-class吗" class="headerlink" title="问:内部类有主见独立的.class吗?"></a>问:内部类有主见独立的.class吗?</h5><pre><code>答:有 因为没有个类都有一.class</code></pre><h3 id="4-面向对象总结："><a href="#4-面向对象总结：" class="headerlink" title="4.面向对象总结："></a>4.面向对象总结：</h3><pre><code>面向对象三大特征：</code></pre><h4 id="1-封装："><a href="#1-封装：" class="headerlink" title="1.封装："></a>1.封装：</h4><pre><code>A.类：封装的是对象的属性和行为
+B.方法：封装的是具体的业务逻辑功能
+C.访问控制修饰符：封装的是具体的访问权限</code></pre><h4 id="2-继承：-1"><a href="#2-继承：-1" class="headerlink" title="2.继承："></a>2.继承：</h4><pre><code>a）代码的复用
+b）父类：所有子类共有的属性和行为
+       子类：子类所特有的属性和行为
+c）继承父类后，子具有：父类+子类
+d）单一继承、多接口实现，传递性</code></pre><h4 id="3-多态"><a href="#3-多态" class="headerlink" title="3.多态:"></a>3.多态:</h4><pre><code>a.意义：行为的多态、对象的多态
+b.向上造型、强制类型转换、instanceof
+c.多态的表现形式：
+c1.重写：主要是依据对象，或者是不同的类型
+c2.重载：主要是依据参数（）println（）依据参数的不同，实现也不同</code></pre><h5 id="3-1-多态重要知识点"><a href="#3-1-多态重要知识点" class="headerlink" title="3.1:多态重要知识点"></a>3.1:多态重要知识点</h5><pre><code>多态是:用父类的角度去看待子类,
+多态是我们人类用我们人类的思维方式去告诉计算机</code></pre><h1 id="JAVA-常用API"><a href="#JAVA-常用API" class="headerlink" title="JAVA - 常用API"></a>JAVA - 常用API</h1>
+        
+    </section>
+</article>
+
+
+
+<a id="pagenext" href="/janetao.github.io/2020/04/17/%EF%BC%9ALINUX%E6%93%8D%E4%BD%9C/" class="article-next" title="运维：LINUX操作"><i class="icon-arrow-right"></i></a>
+
+
+
+
+<div class="comments">
+    <div id="comments"></div>
+    <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+    <script>
+    new Gitalk({
+        clientID: "7fbe80427f54741e289f",
+        clientSecret: "f34ed5fd92e54c9000bd37ba951948cb939deff5",
+        repo: "janetao520.github.io",
+        owner: "janetao520",
+        admin: ["JaneTao"],
+        id: "2020/05/20/017年某内-JAVA",
+        distractionFreeMode: true,
+        title: "2017年某内-JAVA学习笔记",
+        body: "http://yoursite.com/2020/05/20/017%E5%B9%B4%E6%9F%90%E5%86%85-JAVA/",
+        labels: []
+    }).render('comments');
+    </script>
+</div>
+
+
+            </div>
+        </div>
+        <footer class="footer">
+    Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>, Theme by <a href="https://github.com/sanonz/hexo-theme-concise" target="_blank">Concise</a>
+
+    
+    <script>
+        var _hmt = _hmt || [];
+        (function () {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?e4027971a230b210f4671f485b33846a";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+    
+</footer>
+
+    </main>
+
+    <script type="text/javascript" src="https://cdn.bootcss.com/jquery/1.9.0/jquery.min.js"></script>
+    <script type="text/javascript">
+    $(function() {
+        var nodes = {
+            nav: $('#nav'),
+            aside: $('#aside'),
+            asideInner: $('#aside-inner'),
+            navInner: $('#nav-inner')
+        };
+
+        var doing = false;
+        nodes.asideInner.on('webkitAnimationEnd mozAnimationEnd oAnimationEnd oanimationend animationend', function() {
+            if (nodes.aside.hasClass('mobile-open')) {
+                nodes.aside.removeClass('mobile-open');
+            } else {
+                nodes.aside.removeClass('mobile-close panel-show');
+            }
+            doing = false;
+        });
+        $('#open-panel, #aside-mask').on('click', function() {
+            if (doing) {
+                return;
+            }
+
+            if (nodes.aside.hasClass('panel-show')) {
+                nodes.aside.addClass('mobile-close');
+            } else {
+                nodes.aside.addClass('mobile-open panel-show');
+            }
+        });
+        $('#open-menus').on('click', function() {
+            nodes.navInner.slideToggle();
+        });
+
+        if (window.innerWidth <= 960) {
+            setTimeout(function() {
+                nodes.navInner.slideUp();
+            }, 3000);
+        }
+    });
+    </script>
+    
+        
+<script src="/janetao.github.io/js/scrollspy.min.js"></script>
+
+        <script type="text/javascript">
+        $(document.body).scrollspy({target: '#aside-inner'});
+
+        $(window).on('resize', function() {
+            var hw = $('#header').width();
+            var ww = $('#wrapper').width();
+            var space = ($(this).width() - hw - ww) / 2 / 2;
+
+            var pageprev = $('#pageprev');
+            var pagenext = $('#pagenext');
+            var avg = (pageprev.width() + pagenext.width()) / 2
+
+            if(space > avg) {
+                var len = space - avg / 2;
+                var styles = {position: 'fixed', top: '50%', marginTop: - (pageprev.width() + pagenext.width()) / 4}
+                pageprev.css($.extend({left: hw + len}, styles));
+                pagenext.css($.extend({right: len}, styles));
+            } else {
+                pageprev.removeAttr('style');
+                pagenext.removeAttr('style');
+            }
+        }).trigger('resize');
+        </script>
+    
+
+</body>
+</html>
